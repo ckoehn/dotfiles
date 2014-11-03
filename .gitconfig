@@ -1,0 +1,13 @@
+[include]
+	path = .gitconfig.local
+[alias]
+	co = checkout
+	st = status -sb
+	lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+	ls = log --graph --all --format='%C(yellow)%h%C(bold red)%d %Creset%s %Cgreen(%cr) %C(bold blue)<%an>'
+	latest = for-each-ref --sort=-committerdate --format='%(committerdate:short) %(refname:short)'
+[color]
+	ui = true
+[push]
+	default = simple
