@@ -1,5 +1,5 @@
 [include]
-	path = .gitconfig.local
+	path = ~/.gitconfig.local
 [alias]
 	co = checkout
 	st = status -sb
