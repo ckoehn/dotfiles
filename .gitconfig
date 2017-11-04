@@ -1,11 +1,10 @@
-# vi: filetype=gitconfig
-
 [alias]
 	amend = commit --amend
 	b = branch -v
 	db = branch -d
 	co = checkout
 	nb = checkout -b
+	nt = tag -a -s
 	cp = cherry-pick -x
 	d = diff
 	dc = diff --cached
