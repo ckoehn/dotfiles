@@ -1,3 +1,6 @@
+[user]
+	name = Christian Köhn
+
 [alias]
 	amend = commit --amend
 	b = branch -v
