@@ -17,4 +17,4 @@ then
 	zgen save
 fi
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f "${HOME}/.fzf.zsh" ] && source "${HOME}/.fzf.zsh"
