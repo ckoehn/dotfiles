@@ -6,10 +6,12 @@ then
 	zgen prezto '*:*' color 'yes'
 	zgen prezto git:alias skip 'yes'
 	zgen prezto prompt theme 'sorin'
+	zgen prezto ssh load identities 'id_rsa' 'id_rsa_github'
 
 	zgen prezto
 	zgen prezto archive
 	zgen prezto git
+	zgen prezto ssh
 	zgen prezto syntax-highlighting
 
 	zgen load "${HOME}/.zsettings"
