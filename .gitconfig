@@ -44,6 +44,7 @@
 [merge]
 	conflictstyle = diff3
 	ff = false
+	summary = true
 	tool = vimdiff
 	verbosity = 1
 
