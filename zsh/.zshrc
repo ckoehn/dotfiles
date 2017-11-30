@@ -15,6 +15,7 @@ then
 	zgen prezto syntax-highlighting
 
 	zgen load "${HOME}/.zsettings"
+	zgen load lukechilds/zsh-nvm
 
 	zgen save
 fi
