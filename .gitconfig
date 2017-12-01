@@ -4,6 +4,9 @@
 [alias]
 	amend = commit --amend
 	b = branch -v
+	ca = commit --verbose --all
+	cm = commit --message
+	cam = commit --all --message
 	db = branch -d
 	co = checkout
 	nb = checkout -b
@@ -19,6 +22,7 @@
 	ll = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short --name-status
 	ls = log --graph --all --format='%C(yellow)%h%C(bold red)%d %Creset%s %Cgreen(%cr) %C(bold blue)<%an>'
 	latest = for-each-ref --sort=-committerdate --format='%(committerdate:short) %(refname:short)'
+	m = merge
 	r = remote -v
 
 [color]
