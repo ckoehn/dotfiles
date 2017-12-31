@@ -1,3 +1,8 @@
+echo '# Install fonts'
+[ ! -d ~/.local/share/fonts ] && mkdir -p ~/.local/share/fonts
+ln -sf $PWD/fonts/* ~/.local/share/fonts/
+fc-cache -f
+
 echo '# Install diff-so-fancy'
 curl -o ~/bin/diff-so-fancy 'https://raw.githubusercontent.com/so-fancy/diff-so-fancy/master/third_party/build_fatpack/diff-so-fancy'
 chmod +x ~/bin/diff-so-fancy
@@ -24,5 +29,5 @@ ln -sf $PWD/.tmux.conf ~/.tmux.conf
 [ ! -f ~/.tmux.conf.local ] && touch ~/.tmux.conf.local
 
 echo '# Link terminator configuration'
-mkdir -p ~/.config/terminator
+[ ! -d ~/.config/terminator ] && mkdir -p ~/.config/terminator
 ln -sf $PWD/terminator.config ~/.config/terminator/config
