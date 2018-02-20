@@ -3,9 +3,13 @@ echo '# Install fonts'
 ln -sf $PWD/fonts/* ~/.local/share/fonts/
 fc-cache -f
 
-echo '# Install diff-so-fancy'
-curl -o ~/bin/diff-so-fancy 'https://raw.githubusercontent.com/so-fancy/diff-so-fancy/master/third_party/build_fatpack/diff-so-fancy'
-chmod +x ~/bin/diff-so-fancy
+if [ ! hash diff-so-fancy 2>/dev/null ]; then
+	echo '# Install diff-so-fancy'
+	curl -o ~/bin/diff-so-fancy 'https://raw.githubusercontent.com/so-fancy/diff-so-fancy/master/third_party/build_fatpack/diff-so-fancy'
+	chmod +x ~/bin/diff-so-fancy
+else
+	echo '# Skip diff-so-fancy -> already installed'
+fi
 
 echo '# Install zgen'
 ln -sf $PWD/zsh/.zshrc ~/.zshrc
