@@ -35,3 +35,6 @@ ln -sf $PWD/.tmux.conf ~/.tmux.conf
 echo '# Link terminator configuration'
 [ ! -d ~/.config/terminator ] && mkdir -p ~/.config/terminator
 ln -sf $PWD/terminator.config ~/.config/terminator/config
+
+echo '# Link Xmodmap configuration'
+ln -sf $PWD/.Xmodmap ~/.Xmodmap
