@@ -1,5 +1,6 @@
 alias g='git'
 alias gb='git b'
+alias gc='git c'
 alias gca='git ca'
 alias gcam='git cam'
 alias gcm='git cm'
