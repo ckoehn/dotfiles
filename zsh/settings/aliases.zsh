@@ -20,3 +20,5 @@ alias gps='git push'
 alias gr='git r'
 alias gs='git s'
 alias gt='git tag -l -n1 | sort -V'
+
+alias ap='pwd; echo "Continue?"; read; ansible-playbook --vault-password-file=~/.vault_pass.txt -i inventory'
