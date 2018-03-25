@@ -1,6 +1,10 @@
+#!/bin/bash
+
+DIR=$PWD
+
 echo '# Install fonts'
 [ ! -d ~/.local/share/fonts ] && mkdir -p ~/.local/share/fonts
-ln -sf $PWD/fonts/* ~/.local/share/fonts/
+ln -sf $DIR/fonts/* ~/.local/share/fonts/
 fc-cache -f
 
 if [ ! hash diff-so-fancy 2>/dev/null ]; then
@@ -12,9 +16,9 @@ else
 fi
 
 echo '# Install zgen'
-ln -sf $PWD/zsh/.zshrc ~/.zshrc
+ln -sf $DIR/zsh/.zshrc ~/.zshrc
 [ ! -d ~/.zgen ] && git clone https://github.com/tarjoilija/zgen.git ~/.zgen --depth 1
-[ ! -d ~/.zsettings ] && ln -s $PWD/zsh/settings ~/.zsettings
+[ ! -d ~/.zsettings ] && ln -s $DIR/zsh/settings ~/.zsettings
 
 echo '# Change shell to zsh'
 [ -f /usr/bin/zsh ] && chsh -s /usr/bin/zsh
@@ -24,17 +28,22 @@ echo '# Install fzf'
 ~/.fzf/install --no-update-rc --completion --key-bindings
 
 echo '# Link git configuration'
-ln -sf $PWD/.gitconfig ~/.gitconfig
-ln -sf $PWD/.gitignore ~/.gitignore
+ln -sf $DIR/.gitconfig ~/.gitconfig
+ln -sf $DIR/.gitignore ~/.gitignore
 [ ! -f ~/.gitconfig.local ] && touch ~/.gitconfig.local
 
+echo '# Link vim configuration'
+[ ! -d ~/.vim ] && ln -s $DIR/vim ~/.vim
+ln -sf $DIR/vim/vimrc ~/.vimrc
+vim +PlugInstall +qall
+
 echo '# Link tmux configuration'
-ln -sf $PWD/.tmux.conf ~/.tmux.conf
+ln -sf $DIR/.tmux.conf ~/.tmux.conf
 [ ! -f ~/.tmux.conf.local ] && touch ~/.tmux.conf.local
 
 echo '# Link terminator configuration'
 [ ! -d ~/.config/terminator ] && mkdir -p ~/.config/terminator
-ln -sf $PWD/terminator.config ~/.config/terminator/config
+ln -sf $DIR/terminator.config ~/.config/terminator/config
 
 echo '# Link Xmodmap configuration'
-ln -sf $PWD/.Xmodmap ~/.Xmodmap
+ln -sf $DIR/.Xmodmap ~/.Xmodmap
