@@ -2,17 +2,23 @@
 
 DIR=$PWD
 
+echo '# Check requirements'
+if ! command -v ag >/dev/null; then
+	echo "-> Please install 'The Silver Searcher'"
+	exit 1
+fi
+
 echo '# Install fonts'
 [ ! -d ~/.local/share/fonts ] && mkdir -p ~/.local/share/fonts
 ln -sf $DIR/fonts/* ~/.local/share/fonts/
 fc-cache -f
 
-if [ ! hash diff-so-fancy 2>/dev/null ]; then
-	echo '# Install diff-so-fancy'
+echo '# Install diff-so-fancy'
+if ! command -v diff-so-fancy >/dev/null; then
 	curl -o ~/bin/diff-so-fancy 'https://raw.githubusercontent.com/so-fancy/diff-so-fancy/master/third_party/build_fatpack/diff-so-fancy'
 	chmod +x ~/bin/diff-so-fancy
 else
-	echo '# Skip diff-so-fancy -> already installed'
+	echo '-> Skip'
 fi
 
 echo '# Install zgen'
