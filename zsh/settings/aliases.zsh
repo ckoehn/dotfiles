@@ -1,4 +1,6 @@
 alias g='git'
+alias ga='git a'
+alias gaa='git aa'
 alias gb='git b'
 alias gc='git c'
 alias gca='git ca'

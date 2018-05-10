@@ -2,6 +2,8 @@
 	name = Christian Köhn
 
 [alias]
+	a = add
+	aa = add .
 	amend = commit --amend
 	b = branch -v
 	c = commit
@@ -16,7 +18,6 @@
 	d = diff
 	dc = diff --cached
 	s = status -sb
-	st = status -sb
 	uncommit = reset --soft HEAD^
 	unstage = reset HEAD
 	lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
