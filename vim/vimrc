@@ -60,11 +60,8 @@ set sidescrolloff=15
 set sidescroll=1
 
 " Tabs, spaces, wrapping
+filetype plugin indent on
 set nowrap                      " don't wrap lines
-set tabstop=2
-set shiftwidth=2                " an autoindent (with <<) is two spaces
-set softtabstop=2               " a tab is two spaces in insert mode. if tabstop == softtabstop and noexpandtab -> use tabs
-set expandtab                   " use spaces, not tabs
 set textwidth=0                 " no automatic text wrapping
 
 " Searching
@@ -118,12 +115,7 @@ inoremap <expr> <C-k> pumvisible() ? "\<C-P>" : "\<C-k>"
 nnoremap <leader>ev <C-w>s<C-w>j<C-w>L:e ~/.vim/vimrc<cr>
 
 " Filetype-specific stuff
-autocmd BufWritePre *.js :%s/\s\+$//e
-autocmd BufWritePre *.css, *.scss :%s/\s\+$//e
-
-" Python
-autocmd BufWritePre *.py :%s/\s\+$//e
-autocmd FileType python setlocal tabstop=4 shiftwidth=4 expandtab softtabstop=4
+autocmd BufWritePre *.js, *.css, *.scss, *.py :%s/\s\+$//e
 
 " close window
 map <leader>q :q<CR>
@@ -136,9 +128,6 @@ set pastetoggle=<F2>
 
 " switch between current and last buffer
 nnoremap <leader><leader> <c-^>
-
-" sudo to write
-cmap w!! w !sudo tee % >/dev/null
 
 " ---------- PLUGINS ----------
 " -----------------------------
