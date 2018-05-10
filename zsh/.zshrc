@@ -6,6 +6,7 @@ then
 	zgen prezto '*:*' color 'yes'
 	zgen prezto git:alias skip 'yes'
 	zgen prezto prompt theme 'sorin'
+	zgen prezto editor key-bindings 'vi'
 
 	zgen prezto
 	zgen prezto archive
