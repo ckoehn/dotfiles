@@ -28,8 +28,8 @@ echo '# Install fzf'
 ~/.fzf/install --no-update-rc --completion --key-bindings
 
 echo '# Link git configuration'
-ln -sf $DIR/.gitconfig ~/.gitconfig
-ln -sf $DIR/.gitignore ~/.gitignore
+ln -sf $DIR/git/.gitconfig ~/.gitconfig
+ln -sf $DIR/git/.gitignore ~/.gitignore
 [ ! -f ~/.gitconfig.local ] && touch ~/.gitconfig.local
 
 echo '# Link vim configuration'
