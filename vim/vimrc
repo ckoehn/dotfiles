@@ -74,7 +74,11 @@ set smartcase                   " ... unless they contain at least one capital l
 let mapleader = ","
 
 " Appearance
-set termguicolors
+if has("termguicolors")
+	set termguicolors
+else
+	set t_Co=256
+endif
 set background=dark
 let g:gruvbox_contrast_dark='hard'
 silent! colorscheme gruvbox
