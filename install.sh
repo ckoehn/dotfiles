@@ -51,5 +51,9 @@ echo '# Link terminator configuration'
 [ ! -d ~/.config/terminator ] && mkdir -p ~/.config/terminator
 ln -sf $DIR/terminator.config ~/.config/terminator/config
 
+echo '# Link rofi configuration'
+[ ! -d ~/.config/rofi ] && mkdir -p ~/.config/rofi
+ln -sf $DIR/rofi/*.rasi ~/.config/rofi/
+
 echo '# Link Xmodmap configuration'
 ln -sf $DIR/.Xmodmap ~/.Xmodmap
