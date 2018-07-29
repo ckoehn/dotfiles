@@ -9,3 +9,5 @@ export NVM_LAZY_LOAD=true
 
 export FZF_DEFAULT_COMMAND='ag -g ""'
 export FZF_DEFAULT_OPTS='--reverse'
+
+export VIRTUALENVWRAPPER_PYTHON='/usr/bin/python3'

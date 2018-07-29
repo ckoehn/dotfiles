@@ -11,6 +11,7 @@ then
 	zgen prezto
 	zgen prezto archive
 	zgen prezto git
+	zgen prezto python
 	zgen prezto syntax-highlighting
 
 	zgen load "${HOME}/.zsettings"
