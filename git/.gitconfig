@@ -6,11 +6,12 @@
 	aa = add .
 	amend = commit --amend
 	b = branch -v
+	bd = branch -d
+	bdr = push origin --delete
 	c = commit
 	ca = commit --verbose --all
 	cm = commit --message
 	cam = commit --all --message
-	db = branch -d
 	co = checkout
 	nb = checkout -b
 	nt = tag -a -s
