@@ -1,0 +1,108 @@
+; vim:ft=dosini
+[colors]
+background = #1d2021
+foreground = #ebdbb2
+separator = #928374
+warn = #cc241d
+
+[global/wm]
+margin-bottom = 0
+
+[settings]
+screenchange-reload = true
+
+[bar/top]
+background = ${colors.background}
+fixed-center = false
+font-0 = Hack:size=10;2
+font-1 = FontAwesome:style=Regular:size=10;1
+foreground = ${colors.foreground}
+height = 27
+modules-right = xbacklight separator volume separator cpu separator memory separator wlan separator battery0 separator battery1 separator temperature separator date
+monitor = ${env:MONITOR:eDP1}
+padding-right = 2
+width = 100%
+
+[module/xbacklight]
+type = internal/xbacklight
+label = " %percentage%%"
+format-prefix = 
+
+[module/cpu]
+type = internal/cpu
+format-prefix = 
+interval = 2
+label = " %percentage%%"
+
+[module/memory]
+type = internal/memory
+format-prefix = 
+interval = 5
+label = " %percentage_used%%"
+
+[module/wlan]
+type = internal/network
+interface = wlp4s0
+interval = 5
+
+format-connected-prefix = 
+label-connected = " %signal%%"
+
+format-disconnected-prefix = 
+label-disconnected = " -"
+
+[module/date]
+type = internal/date
+date = "%a %d.%m"
+interval = 5
+label = %date% - %time%
+time = %H:%M
+
+[module/volume]
+type = internal/alsa
+
+format-muted-prefix = 
+label-muted = " -"
+
+format-volume = <ramp-volume> <label-volume>
+label-volume = %percentage%%
+ramp-volume-0 = 
+ramp-volume-1 = 
+
+[module/battery0]
+type = internal/battery
+battery = BAT0
+full-at = 95
+
+format-charging-prefix = 
+label-charging = " %percentage%%"
+
+format-discharging = <ramp-capacity> <label-discharging>
+label-discharging = %percentage%%
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+
+format-full-prefix = 
+label-full = " %percentage%%"
+
+[module/battery1]
+inherit = module/battery0
+battery = BAT1
+
+[module/temperature]
+type = internal/temperature
+warn-temperature = 60
+
+format-prefix = 
+label = " %temperature-c%"
+
+format-warn-prefix = 
+format-warn-foreground = ${colors.warn}
+label-warn = " %temperature-c%"
+
+[module/separator]
+type = custom/text
+content = |
+content-foreground = ${colors.separator}
+content-padding = 2
