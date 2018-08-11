@@ -44,10 +44,6 @@ echo '# Link vim configuration'
 ln -sf $DIR/vim/vimrc ~/.vimrc
 vim +PlugInstall +qall
 
-echo '# Link tmux configuration'
-ln -sf $DIR/.tmux.conf ~/.tmux.conf
-[ ! -f ~/.tmux.conf.local ] && touch ~/.tmux.conf.local
-
 echo '# Link terminator configuration'
 [ ! -d ~/.config/terminator ] && mkdir -p ~/.config/terminator
 ln -sf $DIR/terminator.config ~/.config/terminator/config
