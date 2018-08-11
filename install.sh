@@ -22,7 +22,8 @@ else
 fi
 
 echo '# Install zgen'
-ln -sf $DIR/zsh/.zshrc ~/.zshrc
+ln -sf $DIR/zsh/zshenv ~/.zshenv
+ln -sf $DIR/zsh/zshrc ~/.zshrc
 [ ! -d ~/.zgen ] && git clone https://github.com/tarjoilija/zgen.git ~/.zgen --depth 1
 [ ! -d ~/.zsettings ] && ln -s $DIR/zsh/settings ~/.zsettings
 
