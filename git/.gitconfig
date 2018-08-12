@@ -8,13 +8,13 @@
 	b = branch -v
 	bd = branch -d
 	bdr = push origin --delete
+	bn = checkout -b
 	c = commit
 	ca = commit --verbose --all
 	cm = commit --message
 	cam = commit --all --message
 	co = checkout
-	nb = checkout -b
-	nt = tag -a -s
+	tn = tag -a -s
 	cp = cherry-pick -x
 	d = diff
 	dc = diff --cached
