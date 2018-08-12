@@ -7,25 +7,25 @@ if ! command -v ag >/dev/null; then
 	echo "-> Please install 'The Silver Searcher'"
 	exit 1
 fi
+if ! command -v diff-so-fancy >/dev/null; then
+	echo "-> Please install 'diff-so-fancy'"
+	exit 1
+fi
+if ! command -v xsel >/dev/null; then
+	echo "-> Please install 'xsel'"
+	exit 1
+fi
 
 echo '# Install fonts'
 [ ! -d ~/.local/share/fonts ] && mkdir -p ~/.local/share/fonts
 ln -sf $DIR/fonts/* ~/.local/share/fonts/
 fc-cache -f
 
-echo '# Install diff-so-fancy'
-if ! command -v diff-so-fancy >/dev/null; then
-	curl -o ~/bin/diff-so-fancy 'https://raw.githubusercontent.com/so-fancy/diff-so-fancy/master/third_party/build_fatpack/diff-so-fancy'
-	chmod +x ~/bin/diff-so-fancy
-else
-	echo '-> Skip'
-fi
-
 echo '# Install zgen'
 ln -sf $DIR/zsh/zshenv ~/.zshenv
 ln -sf $DIR/zsh/zshrc ~/.zshrc
-[ ! -d ~/.zgen ] && git clone https://github.com/tarjoilija/zgen.git ~/.zgen --depth 1
 [ ! -d ~/.zsettings ] && ln -s $DIR/zsh/settings ~/.zsettings
+[ ! -d ~/.zgen ] && git clone https://github.com/tarjoilija/zgen.git ~/.zgen --depth 1
 
 echo '# Change shell to zsh'
 [ -f /usr/bin/zsh ] && chsh -s /usr/bin/zsh
