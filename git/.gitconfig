@@ -2,31 +2,10 @@
 	name = Christian Köhn
 
 [alias]
-	a = add
-	aa = add .
 	amend = commit --amend
-	b = branch -v
-	bd = branch -d
-	bdr = push origin --delete
-	bn = checkout -b
-	c = commit
-	ca = commit --verbose --all
-	cm = commit --message
-	cam = commit --all --message
-	co = checkout
-	tn = tag -a -s
-	cp = cherry-pick -x
-	d = diff
-	dc = diff --cached
-	s = status -sb
+	latest = for-each-ref --sort=-committerdate --format='%(committerdate:short) %(refname:short)'
 	uncommit = reset --soft HEAD^
 	unstage = reset HEAD
-	lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
-	ll = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short --name-status
-	ls = log --graph --all --format='%C(yellow)%h%C(bold red)%d %Creset%s %Cgreen(%cr) %C(bold blue)<%an>'
-	latest = for-each-ref --sort=-committerdate --format='%(committerdate:short) %(refname:short)'
-	m = merge
-	r = remote -v
 
 [color]
 	ui = true
