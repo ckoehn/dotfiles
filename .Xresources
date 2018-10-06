@@ -2,7 +2,7 @@
 *foreground: #ebdbb2
 
 ! Black + DarkGrey
-*color0:  #1d2021
+*color0:  #282828
 *color8:  #928374
 
 ! DarkRed + Red
@@ -30,5 +30,5 @@
 *color14: #8ec07c
 
 ! LightGrey + White
-*color7:  #d5c4a1
+*color7:  #a89984
 *color15: #ebdbb2

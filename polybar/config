@@ -1,9 +1,9 @@
 ; vim:ft=dosini
 [colors]
-background = #1d2021
-foreground = #ebdbb2
+background = ${xrdb:background:#ff0000}
+foreground = ${xrdb:foreground:#ff0000}
 separator = #928374
-warn = #cc241d
+warn = ${xrdb:color1:#ff0000}
 
 [global/wm]
 margin-bottom = 0
@@ -20,8 +20,9 @@ foreground = ${colors.foreground}
 height = 27
 modules-left = i3
 modules-right = xbacklight separator volume separator cpu separator memory separator wlan separator battery0 separator battery1 separator temperature separator date
-monitor = ${env:MONITOR:eDP1}
+monitor = ${env:MONITOR:}
 padding-right = 2
+tray-position = right
 width = 100%
 
 [module/i3]

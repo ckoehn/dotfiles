@@ -8,11 +8,6 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
     unset f
 fi
 
-xrdb -load ~/.Xresources
-
-setxkbmap de
-xmodmap ~/.Xmodmap
-
-xset r rate 200 40
+[ -f ~/.xprofile ] && . ~/.xprofile
 
 exec i3

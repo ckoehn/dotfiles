@@ -4,8 +4,10 @@
 set $mod Mod1
 
 # Colors
-set_from_resource $darkgrey    color8  #000000
+set_from_resource $background  background  #000000
+set_from_resource $foreground  foreground  #000000
 set_from_resource $black       color0  #000000
+set_from_resource $darkgrey    color8  #000000
 set_from_resource $darkred     color1  #000000
 set_from_resource $red         color9  #000000
 set_from_resource $darkgreen   color2  #000000
@@ -29,12 +31,12 @@ font pango:Hack 9
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
 
-#                       BORDER      BACKGROUND  TEXT        INDICATOR   CHILD_BORDER
-client.focused          $black      $black      $white      $darkgrey   $darkwhite
-client.unfocused        $black      $black      $white      $black      $darkgrey
-client.focused_inactive $black      $black      $white      $black      $black
-client.urgent           $darkred    $darkred    $white      $darkred    $darkred
-client.background       $black
+#                       BORDER           BACKGROUND       TEXT        INDICATOR     CHILD_BORDER
+client.focused          $background      $background      $white      $darkyellow   $darkgrey
+client.unfocused        $background      $background      $white      $background   $background
+client.focused_inactive $background      $background      $white      $background   $background
+client.urgent           $darkred         $darkred         $white      $darkred      $darkred
+client.background       $background
 
 # new_window none
 for_window [class=".*"] border pixel 2
@@ -79,10 +81,10 @@ bindsym $mod+l focus right
 # bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
+# bindsym $mod+Shift+h move left
+# bindsym $mod+Shift+j move down
+# bindsym $mod+Shift+k move up
+# bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 # bindsym $mod+Shift+Left move left
@@ -91,10 +93,10 @@ bindsym $mod+Shift+l move right
 # bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-# bindsym $mod+h split h
+bindsym $mod+Shift+h split v
 
 # split in vertical orientation
-#bindsym $mod+v split v
+bindsym $mod+Shift+v split h
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -189,6 +191,13 @@ bindsym $mod+r mode "resize"
 
 bindsym $mod+Control+l exec i3lock -n -u -c 1d2021 #-t -i ~/.dotfiles/wallpaper/colorful_sunset_red_5120x2880.png
 
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -10%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +10%
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10
+
 exec --no-startup-id compton -b
 exec --no-startup-id feh --bg-scale ~/.dotfiles/wallpaper/colorful_sunset_red_5120x2880.png
+# exec --no-startup-id gnome-keyring-daemon --start --components=pkcs11,secrets,ssh
 exec_always --no-startup-id ~/.config/polybar/launch.sh
