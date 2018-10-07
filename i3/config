@@ -37,8 +37,10 @@ client.focused_inactive $background      $background      $white      $backgroun
 client.urgent           $darkred         $darkred         $white      $darkred      $darkred
 client.background       $background
 
-# new_window none
 for_window [class=".*"] border pixel 2
+for_window [class="Chromium"] border none
+for_window [class="Spotify"] border none
+for_window [class="Thunderbird"] border none
 
 gaps inner 10
 gaps outer 0
