@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 # vim:ts=4:sw=4:expandtab
 
 killall -q polybar
