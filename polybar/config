@@ -18,7 +18,7 @@ font-1 = FontAwesome:style=Regular:size=10;1
 foreground = ${colors.foreground}
 height = 27
 modules-left = i3
-modules-right = xbacklight volume cpu memory wlan battery0 battery1 temperature date
+modules-right = xbacklight volume cpu memory wlan0 wlan1 battery0 battery1 temperature date
 monitor = ${env:MONITOR:}
 module-margin = 2
 padding-right = 2
@@ -76,7 +76,7 @@ format-prefix = 
 interval = 5
 label = " %percentage_used%%"
 
-[module/wlan]
+[module/wlan0]
 type = internal/network
 interface = wlp4s0
 interval = 5
@@ -86,6 +86,10 @@ label-connected = " %signal%%"
 
 format-disconnected-prefix = 
 label-disconnected = " -"
+
+[module/wlan1]
+inherit = module/wlan0
+interface = wlp3s0
 
 [module/date]
 type = internal/date
