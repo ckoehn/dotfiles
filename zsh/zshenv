@@ -51,7 +51,7 @@ fi
 #
 # Own stuff
 #
-export FZF_DEFAULT_COMMAND='ag -g ""'
+export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 export FZF_DEFAULT_OPTS='--reverse'
 
 export NVM_DIR="${HOME}/.nvm"
