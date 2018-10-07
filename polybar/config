@@ -1,9 +1,8 @@
 ; vim:ft=dosini
 [colors]
-background = #1d2021
-foreground = #ebdbb2
-separator = #928374
-warn = #cc241d
+background = ${xrdb:background:#ff0000}
+foreground = ${xrdb:foreground:#ff0000}
+warn = ${xrdb:color1:#ff0000}
 
 [global/wm]
 margin-bottom = 0
@@ -18,10 +17,47 @@ font-0 = Hack:size=10;2
 font-1 = FontAwesome:style=Regular:size=10;1
 foreground = ${colors.foreground}
 height = 27
-modules-right = xbacklight separator volume separator cpu separator memory separator wlan separator battery0 separator battery1 separator temperature separator date
-monitor = ${env:MONITOR:eDP1}
+modules-left = i3
+modules-right = xbacklight volume cpu memory wlan0 wlan1 battery0 battery1 temperature date
+monitor = ${env:MONITOR:}
+module-margin = 2
 padding-right = 2
+separator = %{F#928374}|%{F-}
+tray-position = right
 width = 100%
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+
+; Only show workspaces on the same output as the bar
+;pin-workspaces = true
+
+label-mode-background = ${colors.background}
+label-mode-foreground = ${colors.foreground}
+label-mode-padding = 2
+
+; focused = Active workspace on focused monitor
+label-focused = %index%
+label-focused-background = ${colors.foreground}
+label-focused-foreground = ${colors.background}
+label-focused-padding = 2
+
+; unfocused = Inactive workspace on any monitor
+label-unfocused = %index%
+label-unfocused-padding = 2
+
+; visible = Active workspace on unfocused monitor
+label-visible = %index%
+label-visible-background = ${self.label-focused-background}
+; label-visible-underline = ${self.label-focused-underline}
+
+; urgent = Workspace with urgency hint set
+label-urgent = %index%
+label-urgent-background = ${colors.background}
+label-urgent-padding = 2
 
 [module/xbacklight]
 type = internal/xbacklight
@@ -40,7 +76,7 @@ format-prefix = 
 interval = 5
 label = " %percentage_used%%"
 
-[module/wlan]
+[module/wlan0]
 type = internal/network
 interface = wlp4s0
 interval = 5
@@ -50,6 +86,10 @@ label-connected = " %signal%%"
 
 format-disconnected-prefix = 
 label-disconnected = " -"
+
+[module/wlan1]
+inherit = module/wlan0
+interface = wlp3s0
 
 [module/date]
 type = internal/date
@@ -100,9 +140,3 @@ label = " %temperature-c%"
 format-warn-prefix = 
 format-warn-foreground = ${colors.warn}
 label-warn = " %temperature-c%"
-
-[module/separator]
-type = custom/text
-content = |
-content-foreground = ${colors.separator}
-content-padding = 2

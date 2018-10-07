@@ -1,0 +1,9 @@
+#!/bin/sh
+# vim:ts=4:sw=4:expandtab
+
+xrdb -load ~/.Xresources
+
+setxkbmap de
+xmodmap ~/.Xmodmap
+
+xset r rate 200 40
