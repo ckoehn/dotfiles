@@ -189,15 +189,15 @@ mode "Resize" {
 }
 bindsym $mod+r mode "Resize"
 
-set $Locker i3lock -u -c 1d2021 && sleep 1
-bindsym $mod+Control+l exec $Locker
+set $lock i3lock -u -c 1d2021
+set $lock_without_notifications "killall -SIGUSR1 dunst; i3lock -u -c 1d2021 -n; killall -SIGUSR2 dunst"
+bindsym $mod+Control+l exec $lock_without_notifications
 
 set $mode_system [l] Lock  [e] Logout  [s] Suspend  [r] Reboot  [Shift+s] Shutdown
 mode "$mode_system" {
-    bindsym l exec --no-startup-id $Locker, mode "default"
+    bindsym l exec --no-startup-id $lock_without_notifications, mode "default"
     bindsym e exec --no-startup-id i3-msg exit, mode "default"
-    bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
-    # bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
+    bindsym s exec --no-startup-id $lock && sleep 1 && systemctl suspend, mode "default"
     bindsym r exec --no-startup-id systemctl reboot, mode "default"
     bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
 
