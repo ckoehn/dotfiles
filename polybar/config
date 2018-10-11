@@ -33,7 +33,7 @@ index-sort = true
 wrapping-scroll = false
 
 ; Only show workspaces on the same output as the bar
-;pin-workspaces = true
+pin-workspaces = true
 
 label-mode-background = ${colors.background}
 label-mode-foreground = ${colors.foreground}
@@ -51,8 +51,8 @@ label-unfocused-padding = 2
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %index%
-label-visible-background = ${self.label-focused-background}
-; label-visible-underline = ${self.label-focused-underline}
+label-visible-background = ${colors.background}
+label-visible-padding = 2
 
 ; urgent = Workspace with urgency hint set
 label-urgent = %index%
