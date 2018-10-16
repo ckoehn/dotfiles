@@ -99,7 +99,7 @@ label = %date% - %time%
 time = %H:%M
 
 [module/volume]
-type = internal/alsa
+type = internal/pulseaudio
 
 format-muted-prefix = 
 label-muted = " -"
