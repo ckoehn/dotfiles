@@ -28,12 +28,11 @@ width = 100%
 
 [module/i3]
 type = internal/i3
+enable-scroll = false
 format = <label-state> <label-mode>
 index-sort = true
-wrapping-scroll = false
-
-; Only show workspaces on the same output as the bar
 pin-workspaces = true
+wrapping-scroll = false
 
 label-mode-background = ${colors.background}
 label-mode-foreground = ${colors.foreground}
@@ -63,6 +62,7 @@ label-urgent-padding = 2
 type = internal/xbacklight
 label = " %percentage%%"
 format-prefix = 
+enable-scroll = false
 
 [module/cpu]
 type = internal/cpu
