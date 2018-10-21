@@ -135,6 +135,8 @@ bindsym $mod+Shift+w move workspace to output right
 bindsym $mod+Shift+s move scratchpad
 bindsym $mod+s scratchpad show
 
+bindsym $mod+Tab workspace back_and_forth
+
 # resize window (you can also use the mouse for that)
 mode "Resize" {
 	bindsym h resize shrink width 10 px or 10 ppt
