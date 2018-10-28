@@ -1,5 +1,7 @@
 STOW_FLAGS = --verbose=1
 
+.DEFAULT_GOAL := all
+
 .PHONY: x
 x:
 	stow x $(STOW_FLAGS)
