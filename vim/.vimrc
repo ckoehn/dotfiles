@@ -33,8 +33,8 @@ set noswapfile
 set nowb
 
 if exists("+undofile")
-  set undofile                  " keep undo information
-  set undodir=~/.vim/history//  " where to put the undo files. // -> filename will be built from complete path
+	set undofile                  " keep undo information
+	set undodir=~/.vim/history//  " where to put the undo files. // -> filename will be built from complete path
 endif
 
 set lazyredraw                  " Don't update while in macro
@@ -116,7 +116,7 @@ inoremap <expr> <C-j> pumvisible() ? "\<C-N>" : "\<C-j>"
 inoremap <expr> <C-k> pumvisible() ? "\<C-P>" : "\<C-k>"
 
 " Edit vim configuration
-nnoremap <leader>ev <C-w>s<C-w>j<C-w>L:e ~/.vim/vimrc<cr>
+nnoremap <leader>ev <C-w>s<C-w>j<C-w>L:e ~/.vimrc<cr>
 
 " Filetype-specific stuff
 autocmd BufWritePre *.js, *.css, *.scss, *.py :%s/\s\+$//e

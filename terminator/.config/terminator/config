@@ -21,6 +21,8 @@
       type = Window
 [plugins]
 [profiles]
+  [[default]]
+    cursor_color = "#aaaaaa"
   [[Gruvbox Dark]]
     background_color = "#1d2021"
     cursor_color = "#bbbbbb"
