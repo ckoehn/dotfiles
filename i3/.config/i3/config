@@ -1,6 +1,5 @@
 set $mod Mod1
 
-# Colors
 set_from_resource $background  background  #FF0000
 set_from_resource $foreground  foreground  #FF0000
 set_from_resource $black       color0  #FF0000
@@ -20,13 +19,18 @@ set_from_resource $cyan        color14 #FF0000
 set_from_resource $darkwhite   color7  #FF0000
 set_from_resource $white       color15 #FF0000
 
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
-font pango:Hack 9
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
 
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
+font pango:Hack 9
 
 #                       BORDER       BACKGROUND   TEXT         INDICATOR    CHILD_BORDER
 client.focused          $background  $background  $foreground  $darkyellow  $darkgrey
@@ -37,8 +41,13 @@ client.background       $background
 
 for_window [class="^.*"] border pixel 1
 for_window [class="Chromium"] border none
+for_window [class="Firefox"] border none
 for_window [class="Spotify"] border none
 for_window [class="Thunderbird"] border none
+
+assign [class="Chromium"] $ws1
+assign [class="Firefox"] $ws1
+assign [class="Thunderbird"] $ws2
 
 # i3-gaps
 gaps inner 10
@@ -91,18 +100,6 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 bindsym $mod+Shift+a focus child
 
-# Define names for default workspaces for which we configure key bindings later on.
-# We use variables to avoid repeating the names in multiple places.
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
 
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
