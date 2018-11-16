@@ -119,7 +119,8 @@ inoremap <expr> <C-k> pumvisible() ? "\<C-P>" : "\<C-k>"
 nnoremap <leader>ev <C-w>s<C-w>j<C-w>L:e ~/.vimrc<cr>
 
 " Filetype-specific stuff
-autocmd BufWritePre *.js, *.css, *.scss, *.py :%s/\s\+$//e
+autocmd FileType python,yaml autocmd BufWritePre <buffer> %s/\s\+$//e
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 " close window
 map <leader>q :q<CR>
