@@ -28,5 +28,5 @@ alias gtc='git tag -a -s'
 
 alias ap='pwd; echo "Continue?"; read; ansible-playbook --vault-password-file=~/.vault_pass.txt --diff -i inventory'
 
-alias backup-home='rsync -ah --progress --stats --delete /home/ckoehn/ /run/media/ckoehn/Master/home/'
+alias backup-home='rsync -ah --progress --stats --delete --exclude /.cache --delete-excluded /home/ckoehn/ /run/media/ckoehn/Master/home/'
 alias sync-backup='rsync -ah --progress --stats --delete /run/media/ckoehn/Master/ /run/media/ckoehn/Slave/'
