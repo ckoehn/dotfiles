@@ -2,12 +2,13 @@
 call plug#begin('~/.vim/plugged')
 Plug 'christoomey/vim-system-copy'
 Plug 'ervandew/supertab'
+Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoInstallBinaries', 'tag': 'v1.19' }
 Plug 'junegunn/fzf.vim'
 Plug 'morhetz/gruvbox'
-Plug 'python-mode/python-mode'
+Plug 'python-mode/python-mode', { 'for': 'python' }
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive', { 'tag': 'v2.5' }
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 
@@ -172,3 +173,14 @@ let g:pymode_rope_regenerate_on_write = 0
 let g:pymode_rope_rename_bind = '<leader>rr'
 let g:pymode_rope_show_doc_bind = ''
 let g:pymode_run = 0
+
+" go
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_function_arguments = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_types = 1
