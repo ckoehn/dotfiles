@@ -4,6 +4,9 @@ export FZF_DEFAULT_OPTS='--reverse'
 export NVM_DIR="${HOME}/.nvm"
 export NVM_LAZY_LOAD=true
 
+export GOPATH="${HOME}/code/go"
+export PATH="${PATH}:${GOPATH}/bin"
+
 export VIRTUALENVWRAPPER_PYTHON='/usr/bin/python3'
 
 if [ -n "$DESKTOP_SESSION" ]; then
