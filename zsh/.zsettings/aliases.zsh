@@ -18,7 +18,7 @@ alias gl='git log --pretty=format:"%C(yellow)%h %ad%Cred%d %Creset%s%Cblue [%an]
 alias gll='git log --pretty=format:"%C(yellow)%h %ad%Cred%d %Creset%s%Cblue [%an]" --decorate --date=short --name-status'
 alias gls='git log --graph --pretty=format:"%C(yellow)%h %ad%Cred%d %Creset%s%Cblue [%an]" --decorate --date=short'
 alias gm='git merge'
-alias gpl='git pull --prune'
+alias gpl='git pull'
 alias gps='git push'
 alias gr='git remote -v'
 alias gs='git status -sb'

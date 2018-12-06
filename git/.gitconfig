@@ -42,6 +42,9 @@
 	keepBackup = false
 	prompt = false
 
+[fetch]
+	prune = true
+
 [pull]
 	rebase = true
 
