@@ -1,7 +1,7 @@
 STOW_FLAGS = --verbose=1
 
 .PHONY: install
-install: zsh git vim terminator fonts i3
+install: gpg zsh git vim terminator fonts i3
 
 .PHONY: x
 x:
@@ -52,3 +52,7 @@ zsh: fzf
 	stow zsh $(STOW_FLAGS)
 	-[ ! -d ~/.zgen ] && git clone https://github.com/tarjoilija/zgen.git ~/.zgen --depth 1
 	chsh -s /usr/bin/zsh
+
+.PHONY: gpg
+gpg:
+	stow gnupg $(STOW_FLAGS)
