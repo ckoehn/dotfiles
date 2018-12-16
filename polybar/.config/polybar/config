@@ -55,7 +55,7 @@ label-visible-padding = 2
 
 ; urgent = Workspace with urgency hint set
 label-urgent = %index%
-label-urgent-background = ${colors.background}
+label-urgent-background = ${colors.warn}
 label-urgent-padding = 2
 
 [module/xbacklight]
