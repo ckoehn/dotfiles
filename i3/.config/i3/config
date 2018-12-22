@@ -171,6 +171,9 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute 1 toggle
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10
 
+bindsym $mod+t exec --no-startup-id redshift -P -O 4500
+bindsym $mod+Shift+t exec --no-startup-id redshift -x
+
 exec --no-startup-id compton -O 0.5 -I 0.5 -b
 exec --no-startup-id feh --no-fehbg --bg-scale ~/.dotfiles/wallpaper/colorful_sunset_red_5120x2880.png
 exec_always --no-startup-id ~/.config/polybar/launch.sh
