@@ -138,7 +138,7 @@ nnoremap <leader><leader> <c-^>
 " ---------- PLUGINS ----------
 " -----------------------------
 " fzf
-nnoremap <silent> <leader>ag :Ag<SPACE>
+nnoremap <silent> <leader>ag :Ag<CR>
 nnoremap <silent> <Leader>aw :Ag <C-R><C-W><CR>
 nnoremap <silent> <leader>b :Buffers<CR>
 nnoremap <silent> <leader>f :Files<CR>
