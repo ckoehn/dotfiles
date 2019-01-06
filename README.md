@@ -8,6 +8,9 @@
 * `stow`
 * `xsel`
 * `redshift`
+* `noto-fonts`
+* `matcha-gtk-theme`
+* `xcursor-breeze`
 
 ## Installation
 1. Clone this repository: `git clone git://github.com/ckoehn/dotfiles.git ~/.dotfiles`

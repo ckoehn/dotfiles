@@ -56,3 +56,7 @@ zsh: fzf
 .PHONY: gpg
 gpg:
 	stow gnupg $(STOW_FLAGS)
+
+.PHONY: gtk
+gtk:
+	stow gtk $(STOW_FLAGS)
