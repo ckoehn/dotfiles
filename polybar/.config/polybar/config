@@ -13,8 +13,8 @@ screenchange-reload = true
 [bar/top]
 background = ${colors.background}
 fixed-center = false
-font-0 = Hack:size=10;2
-font-1 = FontAwesome:style=Regular:size=10;1
+font-0 = Hack:size=10;3
+font-1 = FontAwesome:style=Regular:size=10;2
 foreground = ${colors.foreground}
 height = 27
 modules-left = i3
