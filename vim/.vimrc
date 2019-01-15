@@ -122,6 +122,7 @@ nnoremap <leader>ev <C-w>s<C-w>j<C-w>L:e ~/.vimrc<cr>
 " Filetype-specific stuff
 autocmd FileType python,yaml autocmd BufWritePre <buffer> %s/\s\+$//e
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType go setlocal ts=4 sts=4 sw=4 noexpandtab
 
 " close window
 map <leader>q :q<CR>
