@@ -21,3 +21,6 @@ then
 fi
 
 [ -f "${HOME}/.fzf.zsh" ] && source "${HOME}/.fzf.zsh"
+
+bindkey jj vi-cmd-mode
+bindkey kk vi-cmd-mode
