@@ -71,9 +71,6 @@ set incsearch                   " incremental searching
 set ignorecase                  " searches are case insensitive...
 set smartcase                   " ... unless they contain at least one capital letter
 
-" Leader
-let mapleader = ","
-
 " Appearance
 if has("termguicolors")
 	set termguicolors
@@ -87,6 +84,11 @@ silent! colorscheme gruvbox
 " 'warning' marker
 highlight ColorColumn ctermbg=236 guibg=#3c3836
 let &colorcolumn=100
+
+" -------- KEY MAPPING --------
+" -----------------------------
+" Leader
+let mapleader = ","
 
 " remove search highlighting
 map <leader><space> :noh<cr>
@@ -107,7 +109,9 @@ nnoremap <C-l> <C-w>l
 
 " new vertical/horizontal split
 nnoremap <leader>v <C-w>v<C-w>l
+nnoremap vv <C-w>v<C-w>l
 nnoremap <leader>h <C-w>s<C-w>j
+nnoremap ss <C-w>s<C-w>j
 
 " equal height/width of splits
 nnoremap <leader>0 <C-w>=
@@ -118,11 +122,6 @@ inoremap <expr> <C-k> pumvisible() ? "\<C-P>" : "\<C-k>"
 
 " Edit vim configuration
 nnoremap <leader>ev <C-w>s<C-w>j<C-w>L:e ~/.vimrc<cr>
-
-" Filetype-specific stuff
-autocmd FileType python,yaml autocmd BufWritePre <buffer> %s/\s\+$//e
-autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
-autocmd FileType go setlocal ts=4 sts=4 sw=4 noexpandtab
 
 " close window
 map <leader>q :q<CR>
@@ -135,6 +134,30 @@ set pastetoggle=<F2>
 
 " switch between current and last buffer
 nnoremap <leader><leader> <c-^>
+
+" map esc in insert mode
+inoremap jj <Esc>
+inoremap kk <Esc>
+
+" surround
+map <leader>" ysiw"
+map <leader>' ysiw'
+map <leader>) ysiw)
+map <leader>] ysiw]
+map <leader>} ysiw}
+
+" goto first character
+noremap 0 ^
+noremap ^ 0
+
+" reload
+nmap <silent> ,vr :so %<CR>
+
+" ---------- FILES -----------
+" -----------------------------
+autocmd FileType python,yaml autocmd BufWritePre <buffer> %s/\s\+$//e
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType go setlocal ts=4 sts=4 sw=4 noexpandtab
 
 " ---------- PLUGINS ----------
 " -----------------------------
