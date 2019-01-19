@@ -7,6 +7,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'morhetz/gruvbox'
 Plug 'python-mode/python-mode', { 'for': 'python' }
 Plug 'scrooloose/nerdtree'
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive', { 'tag': 'v2.5' }
 Plug 'tpope/vim-repeat', { 'tag': 'v1.2' }
