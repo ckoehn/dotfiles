@@ -147,9 +147,10 @@ map <leader>) ysiw)
 map <leader>] ysiw]
 map <leader>} ysiw}
 
-" goto first character
+" Start/End of line
 noremap 0 ^
 noremap ^ 0
+noremap = $
 
 " reload
 nmap <silent> ,vr :so %<CR>
