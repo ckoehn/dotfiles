@@ -108,9 +108,7 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 " new vertical/horizontal split
-nnoremap <leader>v <C-w>v<C-w>l
 nnoremap vv <C-w>v<C-w>l
-nnoremap <leader>h <C-w>s<C-w>j
 nnoremap ss <C-w>s<C-w>j
 
 " equal height/width of splits
