@@ -1,5 +1,6 @@
 " Plugins
 call plug#begin('~/.vim/plugged')
+Plug 'christoomey/vim-sort-motion'
 Plug 'christoomey/vim-system-copy'
 Plug 'ervandew/supertab'
 Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoInstallBinaries', 'tag': 'v1.19' }
