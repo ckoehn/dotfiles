@@ -135,7 +135,6 @@ nnoremap <leader><leader> <c-^>
 
 " map esc in insert mode
 inoremap jj <Esc>
-inoremap kk <Esc>
 
 " surround
 map <leader>" ysiw"
