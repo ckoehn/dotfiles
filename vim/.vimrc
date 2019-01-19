@@ -9,6 +9,7 @@ Plug 'python-mode/python-mode', { 'for': 'python' }
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive', { 'tag': 'v2.5' }
+Plug 'tpope/vim-repeat', { 'tag': 'v1.2' }
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 
