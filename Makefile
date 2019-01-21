@@ -47,10 +47,13 @@ fonts:
 	stow fonts $(STOW_FLAGS)
 	fc-cache -f
 
+.PHONY: zplug
+zplug:
+	-[ ! -d ~/.zplug ] && git clone https://github.com/zplug/zplug.git ~/.zplug
+
 .PHONY: zsh
-zsh: fzf
+zsh: zplug fzf
 	stow zsh $(STOW_FLAGS)
-	-[ ! -d ~/.zgen ] && git clone https://github.com/tarjoilija/zgen.git ~/.zgen --depth 1
 	chsh -s /usr/bin/zsh
 
 .PHONY: gpg
