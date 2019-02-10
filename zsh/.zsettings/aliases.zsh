@@ -26,6 +26,18 @@ alias gsh='git show'
 alias gt='git tag -l -n1 | sort -V'
 alias gtc='git tag -a -s'
 
+alias k='kubectl'
+alias ka='kubectl apply -f'
+alias kd='kubectl describe'
+alias kga='kubectl get pods,services,deployments,statefulsets'
+alias kgaw='watch -n1 -t kubectl get pods,services,deployments,statefulsets'
+alias kgp='kubectl get pods'
+alias kgs='kubectl get services'
+alias kl='kubectl logs'
+alias klf='kubectl logs -f --tail=10'
+alias kpf='kubectl port-forward'
+alias kx='kubectl exec -it'
+
 alias ap='pwd; echo "Continue?"; read; ansible-playbook --vault-password-file=~/.vault_pass.txt --diff -i inventory'
 
 alias backup-home='rsync -ah --progress --stats --delete --exclude /.cache --delete-excluded /home/ckoehn/ /run/media/ckoehn/Master/home/'
