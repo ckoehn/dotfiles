@@ -3,7 +3,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'christoomey/vim-sort-motion'
 Plug 'christoomey/vim-system-copy'
 Plug 'ervandew/supertab'
-Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoInstallBinaries', 'tag': 'v1.19' }
+Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoInstallBinaries'}
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf.vim'
 Plug 'morhetz/gruvbox'
@@ -11,8 +11,8 @@ Plug 'python-mode/python-mode', { 'for': 'python' }
 Plug 'scrooloose/nerdtree'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-fugitive', { 'tag': 'v2.5' }
-Plug 'tpope/vim-repeat', { 'tag': 'v1.2' }
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 
