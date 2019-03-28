@@ -29,6 +29,7 @@ width = 100%
 [module/i3]
 type = internal/i3
 enable-scroll = false
+enable-click = false
 format = <label-state> <label-mode>
 index-sort = true
 pin-workspaces = true
