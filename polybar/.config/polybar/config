@@ -62,7 +62,7 @@ label-urgent-padding = 2
 [module/xbacklight]
 type = internal/xbacklight
 label = " %percentage%%"
-format-prefix = 
+format-prefix = 
 enable-scroll = false
 
 [module/cpu]
