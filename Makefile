@@ -1,7 +1,7 @@
 STOW_FLAGS = --verbose=1
 
 .PHONY: install
-install: gpg zsh git vim terminator fonts i3
+install: gpg zsh git vim terminator kitty fonts i3
 
 .PHONY: x
 x:
@@ -41,6 +41,10 @@ vim: fzf
 .PHONY: terminator
 terminator:
 	stow terminator $(STOW_FLAGS)
+
+.PHONY: kitty
+kitty:
+	stow kitty $(STOW_FLAGS)
 
 .PHONY: fonts
 fonts:

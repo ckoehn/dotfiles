@@ -81,6 +81,10 @@ if has("termguicolors")
 else
 	set t_Co=256
 endif
+
+" https://sw.kovidgoyal.net/kitty/faq.html#using-a-color-theme-with-a-background-color-does-not-work-well-in-vim
+let &t_ut=''
+
 set background=dark
 let g:gruvbox_contrast_dark='hard'
 silent! colorscheme gruvbox
