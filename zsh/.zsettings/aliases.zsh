@@ -28,7 +28,9 @@ alias gtc='git tag -a -s'
 
 alias k='kubectl'
 alias ka='kubectl apply -f'
+alias kcc='kubectl config use-context'
 alias kd='kubectl describe'
+alias kg='kubectl get'
 alias kga='kubectl get pods,services,deployments,statefulsets'
 alias kgaw='watch -n1 -t kubectl get pods,services,deployments,statefulsets'
 alias kgp='kubectl get pods'
@@ -39,6 +41,8 @@ alias kpf='kubectl port-forward'
 alias kx='kubectl exec -it'
 
 alias ap='pwd; echo "Continue?"; read; ansible-playbook --vault-password-file=~/.vault_pass.txt --diff -i inventory'
+alias klo='kubelogin --username christian.koehn --password $(pass ldap-new | head -1)'
+alias klop='klo --prod'
 
 alias backup-home='rsync -ah --progress --stats --delete --exclude /.cache --delete-excluded /home/ckoehn/ /run/media/ckoehn/Master/home/'
 alias sync-backup='rsync -ah --progress --stats --delete /run/media/ckoehn/Master/ /run/media/ckoehn/Slave/'
