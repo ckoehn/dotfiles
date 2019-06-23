@@ -1,7 +1,7 @@
 STOW_FLAGS = --verbose=1
 
 .PHONY: install
-install: gpg zsh git vim terminator kitty fonts i3
+install: gpg zsh git vim terminator kitty fonts i3 profile
 
 .PHONY: x
 x:
@@ -67,3 +67,8 @@ gpg:
 .PHONY: gtk
 gtk:
 	stow gtk $(STOW_FLAGS)
+
+.PHONY: profile
+profile:
+	stow profile $(STOW_FLAGS)
+	if ! grep -q '.profile.local' ~/.profile; then echo '. ~/.profile.local' >> ~/.profile; fi
