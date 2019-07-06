@@ -50,9 +50,8 @@ assign [class="Firefox"] $ws1
 assign [class="Thunderbird"] $ws2
 
 # i3-gaps
-gaps inner 10
+gaps inner 15
 gaps outer 0
-smart_gaps on
 smart_borders on
 
 focus_follows_mouse no
