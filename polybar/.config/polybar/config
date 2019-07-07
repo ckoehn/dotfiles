@@ -2,7 +2,8 @@
 [colors]
 background = ${xrdb:background:#ff0000}
 foreground = ${xrdb:foreground:#ff0000}
-warn = ${xrdb:color1:#ff0000}
+accent = ${xrdb:color3:#ff0000}
+alert = ${xrdb:color1:#ff0000}
 
 [global/wm]
 margin-bottom = 0
@@ -41,7 +42,7 @@ label-mode-padding = 2
 
 ; focused = Active workspace on focused monitor
 label-focused = %index%
-label-focused-background = ${colors.foreground}
+label-focused-background = ${colors.accent}
 label-focused-foreground = ${colors.background}
 label-focused-padding = 2
 
@@ -56,24 +57,28 @@ label-visible-padding = 2
 
 ; urgent = Workspace with urgency hint set
 label-urgent = %index%
-label-urgent-background = ${colors.warn}
+label-urgent-background = ${colors.alert}
+label-urgent-foreground = ${colors.background}
 label-urgent-padding = 2
 
 [module/xbacklight]
 type = internal/xbacklight
 label = " %percentage%%"
 format-prefix = 
+format-prefix-foreground = ${colors.accent}
 enable-scroll = false
 
 [module/cpu]
 type = internal/cpu
 format-prefix = 
+format-prefix-foreground = ${colors.accent}
 interval = 2
 label = " %percentage%%"
 
 [module/memory]
 type = internal/memory
 format-prefix = 
+format-prefix-foreground = ${colors.accent}
 interval = 5
 label = " %percentage_used%%"
 
@@ -83,9 +88,11 @@ interface = wlp4s0
 interval = 5
 
 format-connected-prefix = 
+format-connected-prefix-foreground = ${colors.accent}
 label-connected = " %signal%%"
 
 format-disconnected-prefix = 
+format-disconnected-prefix-foreground = ${colors.accent}
 label-disconnected = " -"
 
 [module/wlan1]
@@ -102,13 +109,13 @@ time = %H:%M
 [module/volume]
 type = internal/pulseaudio
 
-format-muted-prefix = 
+format-muted-prefix = 
+format-muted-prefix-foreground = ${colors.accent}
 label-muted = " -"
 
-format-volume = <ramp-volume> <label-volume>
-label-volume = %percentage%%
-ramp-volume-0 = 
-ramp-volume-1 = 
+format-volume-prefix = 
+format-volume-prefix-foreground = ${colors.accent}
+label-volume = " %percentage%%"
 
 [module/battery0]
 type = internal/battery
@@ -116,12 +123,16 @@ battery = BAT0
 full-at = 95
 
 format-charging-prefix = 
+format-charging-prefix-foreground = ${colors.accent}
 label-charging = " %percentage%%"
 
 format-discharging = <ramp-capacity> <label-discharging>
 label-discharging = %percentage%%
+ramp-capacity-foreground = ${colors.accent}
 ramp-capacity-0 = 
+ramp-capacity-0-foreground = ${colors.alert}
 ramp-capacity-1 = 
+ramp-capacity-1-foreground = ${colors.alert}
 ramp-capacity-2 = 
 ramp-capacity-3 = 
 ramp-capacity-4 = 
@@ -132,6 +143,7 @@ ramp-capacity-8 = 
 ramp-capacity-9 = 
 
 format-full-prefix = 
+format-full-prefix-foreground = ${colors.accent}
 label-full = " %percentage%%"
 
 [module/battery1]
@@ -143,8 +155,9 @@ type = internal/temperature
 warn-temperature = 60
 
 format-prefix = 
+format-prefix-foreground = ${colors.accent}
 label = " %temperature-c%"
 
 format-warn-prefix = 
-format-warn-foreground = ${colors.warn}
+format-warn-prefix-foreground = ${colors.alert}
 label-warn = " %temperature-c%"
