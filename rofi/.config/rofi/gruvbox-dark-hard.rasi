@@ -35,7 +35,7 @@ inputbar {
 }
 
 prompt {
-    background-color: @gruvbox-dark-yellow-light;
+    background-color: @gruvbox-dark-yellow-dark;
     padding: 5px 10px;
     text-color: @normal-background;
 }
