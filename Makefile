@@ -1,7 +1,11 @@
 STOW_FLAGS = --verbose=1
 
 .PHONY: install
-install: gpg zsh git vim terminator kitty fonts i3 profile
+install: dirs gpg zsh git vim terminator kitty fonts i3 profile
+
+.PHONY: dirs
+dirs:
+	mkdir -v -p ~/.config ~/.local/bin ~/.local/share/fonts
 
 .PHONY: x
 x:
@@ -20,7 +24,7 @@ polybar:
 	stow polybar $(STOW_FLAGS)
 
 .PHONY: i3
-i3: x dunst rofi polybar
+i3: dirs x dunst rofi polybar
 	stow i3 $(STOW_FLAGS)
 
 .PHONY: git
@@ -47,7 +51,7 @@ kitty:
 	stow kitty $(STOW_FLAGS)
 
 .PHONY: fonts
-fonts:
+fonts: dirs
 	stow fonts $(STOW_FLAGS)
 	fc-cache -f
 
