@@ -5,7 +5,7 @@ install: dirs gpg zsh git vim terminator kitty fonts i3 profile
 
 .PHONY: dirs
 dirs:
-	mkdir -v -p ~/.config ~/.local/bin ~/.local/share/fonts
+	mkdir -v -p ~/.config ~/.local/bin
 
 .PHONY: x
 x:
@@ -51,7 +51,8 @@ kitty:
 	stow kitty $(STOW_FLAGS)
 
 .PHONY: fonts
-fonts: dirs
+fonts:
+	mkdir -v -p ~/.local/share/fonts
 	stow fonts $(STOW_FLAGS)
 	fc-cache -f
 
@@ -66,6 +67,7 @@ zsh: zplug fzf
 
 .PHONY: gpg
 gpg:
+	mkdir -v -p -m 700 ~/.gnupg
 	stow gnupg $(STOW_FLAGS)
 
 .PHONY: gtk
