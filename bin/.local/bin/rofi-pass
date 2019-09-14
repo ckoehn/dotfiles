@@ -1,0 +1,13 @@
+#!/bin/bash
+
+set -Eeuo pipefail
+
+PASSWORD_STORE_DIR="${PASSWORD_STORE_DIR:-$HOME/.password-store}"
+target=$(
+	find -L "${PASSWORD_STORE_DIR}" -path '*/.git' -prune -o -iname '*.gpg' -printf '%P\n' \
+	| sed -e 's/.gpg$//' \
+	| sort \
+	| rofi -dmenu -i -p '🔒'
+)
+pass -c "${target}"
+notify-send "🔒 ${target}" "Password has been copied."
