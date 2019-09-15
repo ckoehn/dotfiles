@@ -41,7 +41,7 @@ prompt {
 }
 
 entry {
-    padding: 5px;
+    padding: 6px 5px 4px 5px;
     text-color: @normal-foreground;
 }
 
