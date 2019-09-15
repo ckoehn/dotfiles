@@ -176,6 +176,21 @@ nnoremap <silent> <leader>gc :Commits<CR>
 nnoremap <silent> <leader>gs :GitFiles?<CR>
 let g:fzf_buffers_jump = 1
 let g:fzf_layout = { 'down': '~20%' }
+" https://github.com/gruvbox-community/gruvbox/blob/ecba37e6b34410d27074247696a0c9fcc8558f7e/colors/gruvbox.vim#L897
+let g:fzf_colors = {
+\ 'fg':      ['fg', 'GruvboxFg1'],
+\ 'bg':      ['fg', 'GruvboxBg0'],
+\ 'hl':      ['fg', 'GruvboxYellow'],
+\ 'fg+':     ['fg', 'GruvboxFg1'],
+\ 'bg+':     ['fg', 'GruvboxBg1'],
+\ 'hl+':     ['fg', 'GruvboxYellow'],
+\ 'info':    ['fg', 'GruvboxBlue'],
+\ 'prompt':  ['fg', 'GruvboxFg4'],
+\ 'pointer': ['fg', 'GruvboxBlue'],
+\ 'marker':  ['fg', 'GruvboxOrange'],
+\ 'spinner': ['fg', 'GruvboxYellow'],
+\ 'header':  ['fg', 'GruvboxBg3']
+\ }
 
 " nerdtree
 map <silent> <C-n> :NERDTreeToggle<CR>
