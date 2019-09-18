@@ -82,4 +82,5 @@ gtk:
 .PHONY: profile
 profile:
 	stow profile $(STOW_FLAGS)
+	@touch ~/.profile
 	if ! grep -q '.profile.local' ~/.profile; then echo '. ~/.profile.local' >> ~/.profile; fi
