@@ -159,9 +159,26 @@ noremap = $
 " reload
 nmap <silent> ,vr :so %<CR>
 
+" spell
+nnoremap sn ]s
+nnoremap sN [s
+nnoremap sf :call FzfSpell()<CR>
+nnoremap <leader>sf 1z=
+nnoremap <leader>sa zg
+
+function! FzfSpellSink(word)
+  exe 'normal! "_ciw'.a:word
+endfunction
+
+function! FzfSpell()
+  let suggestions = spellsuggest(expand("<cword>"), 10)
+  return fzf#run({'source': suggestions, 'sink': function("FzfSpellSink"), 'down': 10 })
+endfunction
+
 " ---------- FILES -----------
 " -----------------------------
 autocmd FileType python,yaml autocmd BufWritePre <buffer> %s/\s\+$//e
+autocmd FileType yaml,markdown,gitcommit setlocal spell
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType go setlocal ts=4 sts=4 sw=4 noexpandtab
 
