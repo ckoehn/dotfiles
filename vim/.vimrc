@@ -177,10 +177,13 @@ endfunction
 
 " ---------- FILES -----------
 " -----------------------------
-autocmd FileType python,yaml autocmd BufWritePre <buffer> %s/\s\+$//e
-autocmd FileType yaml,markdown,gitcommit setlocal spell
-autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
-autocmd FileType go setlocal ts=4 sts=4 sw=4 noexpandtab
+augroup filetypes
+	au!
+	au FileType python,yaml autocmd BufWritePre <buffer> %s/\s\+$//e
+	au FileType yaml,markdown,gitcommit setlocal spell
+	au FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+	au FileType go setlocal ts=4 sts=4 sw=4 noexpandtab
+augroup end
 
 " ---------- PLUGINS ----------
 " -----------------------------
@@ -237,6 +240,13 @@ let g:pymode_rope_show_doc_bind = ''
 let g:pymode_run = 0
 
 " go
+augroup filetype_go
+	au!
+	au FileType go nmap <leader>gt :GoDeclsDir<CR>
+	au Filetype go nmap <leader>ga :GoAlternate<CR>
+	au Filetype go nmap <leader>gct :GoCoverageToggle<CR>
+aug end
+
 let g:go_highlight_build_constraints = 1
 let g:go_highlight_extra_types = 1
 let g:go_highlight_fields = 1
@@ -246,3 +256,7 @@ let g:go_highlight_methods = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_structs = 1
 let g:go_highlight_types = 1
+
+let g:go_fmt_options = {
+\ 'goimports': '-local gitlab.figo.systems',
+\ }
