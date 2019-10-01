@@ -1,7 +1,7 @@
 STOW_FLAGS = --verbose=1
 
 .PHONY: install
-install: bin gpg zsh git vim terminator kitty fonts i3 profile
+install: dirs bin gpg zsh git vim terminator kitty fonts i3 profile gtk
 
 .PHONY: dirs
 dirs:
@@ -68,7 +68,6 @@ zplug:
 .PHONY: zsh
 zsh: zplug fzf
 	stow zsh $(STOW_FLAGS)
-	chsh -s /usr/bin/zsh
 
 .PHONY: gpg
 gpg:
