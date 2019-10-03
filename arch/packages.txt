@@ -7,11 +7,10 @@ lightdm
 lightdm-gtk-greeter
 network-manager-applet
 networkmanager
-networkmanager-dispatcher-ntpd
-ntp
 pavucontrol
 pulseaudio
 pulseaudio-bluetooth
+tlp
 xf86-video-intel
 xorg
 
@@ -60,7 +59,6 @@ yarn
 yq
 zsh
 
-## Applications
 arandr
 arc-gtk-theme
 engrampa
