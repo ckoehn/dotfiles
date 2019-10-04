@@ -52,6 +52,8 @@ sqlite3
 stow
 tcpdump
 the_silver_searcher
+vault
+vegeta
 wget
 whois
 xsel
