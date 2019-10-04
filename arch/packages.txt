@@ -3,6 +3,7 @@ bluez
 bluez-utils
 libva-intel-driver
 libva-utils
+light
 lightdm
 lightdm-gtk-greeter
 network-manager-applet
@@ -11,7 +12,6 @@ pavucontrol
 pulseaudio
 pulseaudio-bluetooth
 tlp
-xf86-video-intel
 xorg
 
 go

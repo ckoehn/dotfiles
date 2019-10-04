@@ -16,4 +16,7 @@ sed -i "s/^#\(autologin-user=\)$/\1${USERNAME}/" /etc/lightdm/lightdm.conf
 # Docker without sudo
 gpasswd -a ${USERNAME} docker
 
+# light
+gpasswd -a ${USERNAME} video
+
 systemctl enable NetworkManager lightdm systemd-timesyncd tlp docker
