@@ -40,7 +40,6 @@ alias klf='kubectl logs -f --tail=10'
 alias kpf='kubectl port-forward'
 alias kx='kubectl exec -it'
 
-alias ap='pwd; echo "Continue?"; read; ansible-playbook --vault-password-file=~/.vault_pass.txt --diff -i inventory'
 alias klo='kubelogin --username christian.koehn --password $(pass ldap-new | head -1)'
 alias klop='klo --prod'
 
