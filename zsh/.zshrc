@@ -38,4 +38,6 @@ if (( $+commands[kubectl] )); then
 	source <(kubectl completion zsh)
 fi
 
-source "${HOME}/.fzf.zsh"
+# https://github.com/junegunn/fzf/blob/ab11b74be4b0c9fac88d95f0f563d0dc0cb06ed3/install#L259-L269
+[[ $- == *i* ]] && source "/usr/share/fzf/completion.zsh" 2> /dev/null
+source "/usr/share/fzf/key-bindings.zsh"

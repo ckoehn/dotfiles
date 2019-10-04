@@ -37,13 +37,8 @@ git:
 	stow git $(STOW_FLAGS)
 	touch ~/.gitconfig.local
 
-.PHONY: fzf
-fzf:
-	-[ ! -d ~/.fzf ] && git clone https://github.com/junegunn/fzf.git ~/.fzf --depth 1
-	~/.fzf/install --no-update-rc --completion --key-bindings --no-bash --64
-
 .PHONY: vim
-vim: fzf
+vim:
 	stow vim $(STOW_FLAGS)
 	vim +PlugInstall +qall
 
@@ -62,7 +57,7 @@ zplug:
 	-[ ! -d ~/.zplug ] && git clone https://github.com/zplug/zplug.git ~/.zplug
 
 .PHONY: zsh
-zsh: zplug fzf
+zsh: zplug
 	stow zsh $(STOW_FLAGS)
 
 .PHONY: gpg
