@@ -42,6 +42,8 @@ alias kx='kubectl exec -it'
 
 alias klo='kubelogin --username christian.koehn --password $(pass ldap-new | head -1)'
 alias klop='klo --prod'
+alias k9s='TERM=xterm-256color k9s'
+alias k9='k9s'
 
 alias backup-home='rsync -ah --progress --stats --delete --exclude /.cache --delete-excluded /home/ckoehn/ /run/media/ckoehn/Master/home/'
 alias sync-backup='rsync -ah --progress --stats --delete /run/media/ckoehn/Master/ /run/media/ckoehn/Slave/'
