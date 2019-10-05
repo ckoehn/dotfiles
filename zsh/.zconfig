@@ -5,6 +5,9 @@ export FZF_DEFAULT_OPTS='--reverse --height 40% --inline-info --preview-window="
 export NVM_DIR="${HOME}/.nvm"
 export NVM_LAZY_LOAD=true
 
+export KUBE_PS1_ENABLED="off"
+export KUBE_PS1_SYMBOL_ENABLE=false
+
 export GOPATH="${HOME}/code/go"
 export PATH="${PATH}:${GOPATH}/bin"
 
