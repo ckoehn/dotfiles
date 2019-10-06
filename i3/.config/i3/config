@@ -41,12 +41,12 @@ client.background       $background
 
 for_window [class="^.*"] border pixel 1
 for_window [class="Chromium"] border none
-for_window [class="Firefox"] border none
+for_window [class="firefox"] border none
 for_window [class="Spotify"] border none
 for_window [class="Thunderbird"] border none
 
 assign [class="Chromium"] $ws1
-assign [class="Firefox"] $ws1
+assign [class="firefox"] $ws1
 assign [class="Thunderbird"] $ws2
 
 # i3-gaps
