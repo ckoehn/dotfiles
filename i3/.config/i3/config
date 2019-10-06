@@ -146,15 +146,14 @@ mode "Resize" {
 }
 bindsym $mod+r mode "Resize"
 
-set $lock i3lock -u -c 1d2021
-set $lock_without_notifications ~/.config/i3/lock.sh 1d2021
-bindsym $mod+Control+l exec $lock_without_notifications
+set $lock ~/.config/i3/lock.sh 1d2021 ebdbb2ff
+bindsym $mod+Control+l exec $lock
 
 set $mode_system [l] Lock  [e] Logout  [s] Suspend  [r] Reboot  [Shift+s] Shutdown
 mode "$mode_system" {
-	bindsym l exec --no-startup-id $lock_without_notifications, mode "default"
+	bindsym l exec --no-startup-id $lock, mode "default"
 	bindsym e exec --no-startup-id i3-msg exit, mode "default"
-	bindsym s exec --no-startup-id $lock && sleep 1 && systemctl suspend, mode "default"
+	bindsym s exec --no-startup-id systemctl suspend, mode "default"
 	bindsym r exec --no-startup-id systemctl reboot, mode "default"
 	bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
 
