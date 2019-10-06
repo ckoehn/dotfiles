@@ -1,26 +1,9 @@
 # dotfiles
 
-## Requirements
-* [The Silver Searcher](https://github.com/ggreer/the_silver_searcher)
-* [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy)
-* `compton`
-* `feh`
-* `stow`
-* `xsel`
-* `redshift`
-* `noto-fonts`
-* `matcha-gtk-theme`
-* `xcursor-breeze`
-
 ## Installation
 1. Clone this repository: `git clone git://github.com/ckoehn/dotfiles.git ~/.dotfiles`
 2. `cd .dotfiles`
 3. Use either `make install` or any of the individual targets.
-
-## Applications
-* Chromium
-  * `cp /usr/share/applications/chromium.desktop .local/share/applications`
-  * Add `--password-store=gnome` to the `Exec` command
 
 ## Fonts
 * [Hack (3.003)](https://github.com/source-foundry/Hack)
