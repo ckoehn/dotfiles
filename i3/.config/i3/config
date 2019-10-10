@@ -172,6 +172,9 @@ bindsym XF86MonBrightnessUp exec --no-startup-id light -A 10
 bindsym $mod+t exec --no-startup-id redshift -O 4500
 bindsym $mod+Shift+t exec --no-startup-id redshift -x
 
+bindsym $mod+m exec --no-startup-id xrandr --output eDP-1 --primary --auto --output HDMI-1 --off
+bindsym $mod+Shift+m exec --no-startup-id xrandr --output eDP-1 --primary --auto --output HDMI-1 --right-of eDP-1 --auto
+
 bindsym $mod+p exec --no-startup-id rofi-pass
 
 exec --no-startup-id ~/.config/i3/battery-monitor.sh
