@@ -4,6 +4,7 @@ Plug 'christoomey/vim-sort-motion'
 Plug 'christoomey/vim-system-copy'
 Plug 'ervandew/supertab'
 Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoInstallBinaries'}
+Plug 'itchyny/lightline.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf.vim'
 Plug 'morhetz/gruvbox'
@@ -14,7 +15,6 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-Plug 'vim-airline/vim-airline'
 
 Plug '~/.fzf'
 call plug#end()
@@ -217,8 +217,50 @@ let g:fzf_colors = {
 map <silent> <C-n> :NERDTreeToggle<CR>
 let NERDTreeIgnore = ['\.pyc$']
 
-" airline
-let g:airline_powerline_fonts = 1
+" lightline
+set laststatus=2
+set noshowmode
+
+let g:lightline = {
+  \ 'colorscheme': 'gruvbox',
+  \ 'active': {
+  \   'left': [['branch'], ['paste', 'spell'], ['filename']],
+  \   'right': [['lineinfo'], ['percent'], ['fileformat', 'fileencoding', 'filetype']]
+  \ },
+  \ 'component_function': {
+  \   'branch': 'fugitive#head',
+  \   'fileencoding': 'LightlineFileencoding',
+  \   'fileformat': 'LightlineFileformat',
+  \   'filename': 'LightlineFilename',
+  \   'filetype': 'LightlineFiletype'
+  \ },
+  \ }
+
+function! LightlineReadonly()
+  return &ft !~? 'help\|fugitive\|git' && &readonly ? '🔒' : ''
+endfunction
+
+function! LightlineModified()
+  return &ft =~ 'help\|fugitive\|git' ? '' : &modified ? '[+]' : &modifiable ? '' : '[-]'
+endfunction
+
+function! LightlineFilename()
+  return  ('' != LightlineReadonly() ? LightlineReadonly() . ' ' : '') .
+        \ ('' != expand('%:t') ? pathshorten(expand('%')) : '[No Name]') .
+        \ ('' != LightlineModified() ? LightlineModified() : '')
+endfunction
+
+function! LightlineFileformat()
+  return winwidth(0) > 70 ? &fileformat : ''
+endfunction
+
+function! LightlineFiletype()
+  return winwidth(0) > 70 ? (&filetype !=# '' ? &filetype : '-') : ''
+endfunction
+
+function! LightlineFileencoding()
+  return winwidth(0) > 70 ? (&fenc !=# '' ? &fenc : &enc) : ''
+endfunction
 
 " fugitive
 map <leader>dg :diffget<CR>
