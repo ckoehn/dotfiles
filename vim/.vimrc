@@ -303,3 +303,6 @@ let g:go_highlight_types = 1
 let g:go_fmt_options = {
 \ 'goimports': '-local gitlab.figo.systems',
 \ }
+
+" ultisnips
+let g:UltiSnipsExpandTrigger="<c-u>"
