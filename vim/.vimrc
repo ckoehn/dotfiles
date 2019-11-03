@@ -45,13 +45,8 @@ endif
 set lazyredraw                  " Don't update while in macro
 set ttyfast                     " Improves redrawing
 
-set list                        " show invisible characters
-set listchars=""                " reset the listchars
-set listchars+=tab:▸\           " show tabs as ▸
-set listchars+=eol:¬            " show end of line as ¬
-set listchars+=trail:.          " show trailing spaces as dots
-set listchars+=extends:>        " show > if the text continues beyond the vim window
-
+set list                        " Show whitespace as special chars - see listchars
+set listchars=tab:▸\ ,extends:›,precedes:‹,nbsp:·,trail:·
 set fillchars+=vert:│           " pretty vertical splits
 
 " Folds
