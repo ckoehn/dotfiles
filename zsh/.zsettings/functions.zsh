@@ -36,6 +36,15 @@ kdi () {
 	kubectl describe "${typ}" "${item}"
 }
 
+kcn () {
+	if [ -z "$1" ]; then
+		echo "Please specify a namespace."
+		return 1
+	fi
+	local current=$(kubectl config current-context)
+	kubectl config set-context "${current}" --namespace="${1}"
+}
+
 kcni () {
 	local ns=$(kubectl get namespace | fzf | awk '{print $1}')
 	local current=$(kubectl config current-context)

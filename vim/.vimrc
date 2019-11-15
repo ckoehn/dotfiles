@@ -15,8 +15,6 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-
-Plug '~/.fzf'
 call plug#end()
 
 " General options

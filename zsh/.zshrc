@@ -23,6 +23,7 @@ zplug "modules/python", from:prezto
 zplug "modules/syntax-highlighting", from:prezto
 
 zplug "lukechilds/zsh-nvm"
+zplug "jonmosco/kube-ps1", use:"kube-ps1.sh"
 zplug "${HOME}/.zsettings", from:local
 
 if ! zplug check --verbose; then
@@ -34,8 +35,8 @@ fi
 
 zplug load
 
-if (( $+commands[kubectl] )); then
-	source <(kubectl completion zsh)
-fi
+RPROMPT+=' $(kube_ps1)'
 
-source "${HOME}/.fzf.zsh"
+# https://github.com/junegunn/fzf/blob/ab11b74be4b0c9fac88d95f0f563d0dc0cb06ed3/install#L259-L269
+[[ $- == *i* ]] && source "/usr/share/fzf/completion.zsh" 2> /dev/null
+source "/usr/share/fzf/key-bindings.zsh"

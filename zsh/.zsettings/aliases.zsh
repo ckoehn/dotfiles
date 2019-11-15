@@ -40,9 +40,10 @@ alias klf='kubectl logs -f --tail=10'
 alias kpf='kubectl port-forward'
 alias kx='kubectl exec -it'
 
-alias ap='pwd; echo "Continue?"; read; ansible-playbook --vault-password-file=~/.vault_pass.txt --diff -i inventory'
 alias klo='kubelogin --username christian.koehn --password $(pass ldap-new | head -1)'
 alias klop='klo --prod'
+alias k9s='TERM=xterm-256color k9s'
+alias k9='k9s'
 
 alias backup-home='rsync -ah --progress --stats --delete --exclude /.cache --delete-excluded /home/ckoehn/ /run/media/ckoehn/Master/home/'
 alias sync-backup='rsync -ah --progress --stats --delete /run/media/ckoehn/Master/ /run/media/ckoehn/Slave/'

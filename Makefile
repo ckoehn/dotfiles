@@ -1,7 +1,7 @@
 STOW_FLAGS = --verbose=1
 
 .PHONY: install
-install: bin gpg zsh git vim terminator kitty fonts i3 profile
+install: dirs bin gpg zsh git vim kitty fonts i3 profile gtk
 
 .PHONY: dirs
 dirs:
@@ -37,19 +37,10 @@ git:
 	stow git $(STOW_FLAGS)
 	touch ~/.gitconfig.local
 
-.PHONY: fzf
-fzf:
-	-[ ! -d ~/.fzf ] && git clone https://github.com/junegunn/fzf.git ~/.fzf --depth 1
-	~/.fzf/install --no-update-rc --completion --key-bindings --no-bash --64
-
 .PHONY: vim
-vim: fzf
+vim:
 	stow vim $(STOW_FLAGS)
 	vim +PlugInstall +qall
-
-.PHONY: terminator
-terminator:
-	stow terminator $(STOW_FLAGS)
 
 .PHONY: kitty
 kitty:
@@ -66,9 +57,8 @@ zplug:
 	-[ ! -d ~/.zplug ] && git clone https://github.com/zplug/zplug.git ~/.zplug
 
 .PHONY: zsh
-zsh: zplug fzf
+zsh: zplug
 	stow zsh $(STOW_FLAGS)
-	chsh -s /usr/bin/zsh
 
 .PHONY: gpg
 gpg:
@@ -82,4 +72,5 @@ gtk:
 .PHONY: profile
 profile:
 	stow profile $(STOW_FLAGS)
+	@touch ~/.profile
 	if ! grep -q '.profile.local' ~/.profile; then echo '. ~/.profile.local' >> ~/.profile; fi
