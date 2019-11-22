@@ -216,7 +216,7 @@ set noshowmode
 let g:lightline = {
   \ 'colorscheme': 'gruvbox',
   \ 'active': {
-  \   'left': [['branch'], ['paste', 'spell'], ['filename']],
+  \   'left': [[], ['paste', 'spell'], ['filename']],
   \   'right': [['lineinfo'], ['percent'], ['fileformat', 'fileencoding', 'filetype']]
   \ },
   \ 'component_function': {
@@ -238,7 +238,7 @@ endfunction
 
 function! LightlineFilename()
   return  ('' != LightlineReadonly() ? LightlineReadonly() . ' ' : '') .
-        \ ('' != expand('%:t') ? pathshorten(expand('%')) : '[No Name]') .
+        \ ('' != expand('%') ? expand('%') : '[No Name]') .
         \ ('' != LightlineModified() ? LightlineModified() : '')
 endfunction
 
