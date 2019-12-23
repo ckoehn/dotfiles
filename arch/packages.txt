@@ -21,7 +21,6 @@ python3
 
 acpi
 bat
-compton
 curl
 diff-so-fancy
 docker
@@ -43,6 +42,7 @@ kubectl
 lsof
 openssh
 pass
+picom
 powertop
 python-virtualenvwrapper
 redshift
