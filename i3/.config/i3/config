@@ -39,7 +39,7 @@ client.focused_inactive $background  $background  $foreground  $background  $bac
 client.urgent           $background  $background  $foreground  $darkred     $darkred
 client.background       $background
 
-for_window [class="^.*"] border pixel 1
+for_window [class="^.*"] border pixel 2
 for_window [class="Chromium"] border none
 for_window [class="firefox"] border none
 for_window [class="Spotify"] border none floating enable
