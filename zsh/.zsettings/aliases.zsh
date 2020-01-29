@@ -41,7 +41,8 @@ alias kpf='kubectl port-forward'
 alias kx='kubectl exec -it'
 
 alias klo='kubelogin --username christian.koehn --password $(pass ldap-new | head -1)'
-alias klop='klo --prod'
+alias klod='klo && kcc dev'
+alias klop='klo --prod && kcc prod'
 alias k9s='TERM=xterm-256color k9s'
 alias k9='k9s'
 
