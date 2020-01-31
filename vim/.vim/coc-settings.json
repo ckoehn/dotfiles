@@ -1,0 +1,23 @@
+{
+	"coc.preferences.formatOnSaveFiletypes": ["python"],
+	"languageserver": {
+		"golang": {
+			"command": "gopls",
+			"rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
+			"filetypes": ["go"],
+			"initializationOptions": {
+				"usePlaceholders": true
+			}
+		}
+	},
+	"python.autoComplete.showAdvancedMembers": false,
+	"python.formatting.blackArgs": ["-l", "100"],
+	"python.formatting.blackPath": "/usr/bin/black",
+	"python.formatting.provider": "black",
+	"python.jediEnabled": false,
+	"python.linting.enabled": true,
+	"python.linting.flake8Enabled": true,
+	"python.linting.flake8Path": "/usr/bin/flake8",
+	"python.linting.pylamaEnabled": false,
+	"python.linting.pylintEnabled": false
+}

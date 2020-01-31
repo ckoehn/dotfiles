@@ -27,6 +27,7 @@ docker
 docker-compose
 dunst
 feh
+flake8
 flatpak
 fwupd
 fzf
@@ -44,6 +45,7 @@ openssh
 pass
 picom
 powertop
+python-black
 python-virtualenvwrapper
 redshift
 rofi

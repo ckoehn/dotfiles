@@ -2,13 +2,12 @@
 call plug#begin('~/.vim/plugged')
 Plug 'christoomey/vim-sort-motion'
 Plug 'christoomey/vim-system-copy'
-Plug 'ervandew/supertab'
 Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoInstallBinaries'}
 Plug 'itchyny/lightline.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf.vim'
 Plug 'morhetz/gruvbox'
-Plug 'python-mode/python-mode', { 'for': 'python' }
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'scrooloose/nerdtree'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'tpope/vim-commentary'
@@ -60,7 +59,7 @@ set sidescroll=1
 " Tabs, spaces, wrapping
 filetype plugin indent on
 set nowrap                      " don't wrap lines
-set textwidth=0                 " no automatic text wrapping
+set textwidth=100
 
 " Searching
 set hlsearch                    " highlight matches
@@ -172,7 +171,7 @@ endfunction
 " -----------------------------
 augroup filetypes
 	au!
-	au FileType python,yaml autocmd BufWritePre <buffer> %s/\s\+$//e
+	au FileType yaml autocmd BufWritePre <buffer> %s/\s\+$//e
 	au FileType yaml,markdown,gitcommit setlocal spell
 	au FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 	au FileType go setlocal ts=4 sts=4 sw=4 noexpandtab
@@ -261,24 +260,9 @@ nnoremap <silent> <leader>gb :Gblame<CR>
 nnoremap <silent> <leader>gd :Gvdiff<CR>
 nnoremap <silent> <leader>gs :Gstatus<CR>
 
-" pymode
-let g:pymode_breakpoint = 1
-let g:pymode_breakpoint_bind = '<leader>rb'
-let g:pymode_doc = 0
-let g:pymode_lint = 1
-let g:pymode_options_max_line_length = 100
-let g:pymode_rope = 1
-let g:pymode_rope_completion = 0
-let g:pymode_rope_goto_definition_bind = '<leader>rg'
-let g:pymode_rope_regenerate_on_write = 0
-let g:pymode_rope_rename_bind = '<leader>rr'
-let g:pymode_rope_show_doc_bind = ''
-let g:pymode_run = 0
-
 " go
 augroup filetype_go
 	au!
-	au FileType go nmap <leader>gt :GoDeclsDir<CR>
 	au Filetype go nmap <leader>ga :GoAlternate<CR>
 	au Filetype go nmap <leader>gct :GoCoverageToggle<CR>
 aug end
@@ -299,3 +283,24 @@ let g:go_fmt_options = {
 
 " ultisnips
 let g:UltiSnipsExpandTrigger="<c-u>"
+
+" coc
+let g:coc_global_extensions = ["coc-python", "coc-json"]
+
+" Use tab for trigger completion with characters ahead and navigate.
+" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+nmap <leader>rn <Plug>(coc-rename)
+nmap <leader>ge :CocList diagnostics<CR>
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gr <Plug>(coc-references)
