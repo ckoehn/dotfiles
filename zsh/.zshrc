@@ -6,6 +6,7 @@ zstyle ':prezto:*:*' color 'yes'
 zstyle ':prezto:module:editor' key-bindings 'vi'
 zstyle ':prezto:module:prompt' theme 'sorin'
 zstyle ':prezto:module:git:alias' skip 'yes'
+zstyle ':prezto:module:utility' safe-ops 'no'
 
 zplug "modules/environment", from:prezto
 zplug "modules/terminal", from:prezto
