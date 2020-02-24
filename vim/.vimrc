@@ -304,3 +304,23 @@ nmap <leader>rn <Plug>(coc-rename)
 nmap <leader>ge :CocList diagnostics<CR>
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gr <Plug>(coc-references)
+
+" python
+let g:python_breakpoint_cmd = "import pdb; pdb.set_trace()"
+
+fun! PythonBreakpoint(lnum)
+  let plnum = prevnonblank(a:lnum)
+  if &expandtab
+    let indents = repeat(' ', indent(plnum))
+  else
+    let indents = repeat("\t", plnum / &shiftwidth)
+  endif
+
+  call append(line('.')-1, indents.g:python_breakpoint_cmd)
+  normal k
+endfun
+
+augroup filetype_python
+  au!
+  nnoremap <leader>rb :call PythonBreakpoint(line('.'))<CR>
+augroup end
