@@ -1,7 +1,7 @@
 #!/bin/bash
 set -Eeuo pipefail
 
-PACKAGES=(polybar k9s-bin kubernetes-helm-bin)
+PACKAGES=(cfssl insomnia polybar kubernetes-helm-bin)
 AURPATH=${HOME}/code/aur
 
 mkdir -p "${AURPATH}"

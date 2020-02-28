@@ -39,6 +39,7 @@ i3-gaps
 i3lock-color
 ipython
 jq
+k9s
 kubectl
 lsof
 openssh
