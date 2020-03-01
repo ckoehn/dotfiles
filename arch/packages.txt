@@ -43,6 +43,7 @@ k9s
 kubectl
 lsof
 openssh
+pacman-contrib
 pass
 picom
 powertop
