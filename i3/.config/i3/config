@@ -163,6 +163,18 @@ mode "$mode_system" {
 }
 bindsym $mod+Shift+e mode "$mode_system"
 
+set $mode_output [i] Intern  [e] Extern  [d] Dual
+mode "$mode_output" {
+	bindsym i exec --no-startup-id xrandr --output eDP-1 --primary --auto --output HDMI-1 --off, mode "default"
+	bindsym e exec --no-startup-id xrandr --output HDMI-1 --primary --auto --output eDP-1 --off, mode "default"
+	bindsym d exec --no-startup-id xrandr --output eDP-1 --primary --auto --output HDMI-1 --right-of eDP-1 --auto, mode "default"
+
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+	bindsym $mod+o mode "default"
+}
+bindsym $mod+o mode "$mode_output"
+
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
