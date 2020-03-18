@@ -185,7 +185,7 @@ nnoremap <silent> <leader>ag :Ag<CR>
 nnoremap <silent> <Leader>aw :Ag <C-R><C-W><CR>
 nnoremap <silent> <leader>b :Buffers<CR>
 nnoremap <silent> <leader>f :Files<CR>
-nnoremap <silent> <leader>cb :BCommits<CR>
+nnoremap <silent> <leader>gh :BCommits<CR>
 let g:fzf_preview_window = ''
 let g:fzf_commits_log_options = '--format="%C(yellow)%h %ad%Cred%d %Creset%s%Cblue [%an]" --color=always --decorate --date=short'
 let g:fzf_buffers_jump = 1
