@@ -84,6 +84,7 @@ meld
 mousepad
 papirus-icon-theme
 ristretto
+teamspeak3
 telegram-desktop
 thunar gvfs gvfs-afc gvfs-gphoto2 gvfs-mtp gvfs-nfs gvfs-smb
 thunar-volman
