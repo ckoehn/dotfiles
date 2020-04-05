@@ -49,6 +49,7 @@ pass
 picom
 powertop
 python-black
+python-poetry
 python-virtualenvwrapper
 redshift
 rofi
