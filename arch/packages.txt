@@ -32,6 +32,7 @@ flatpak
 fwupd
 fzf
 git
+graphviz
 hexyl
 htop
 httpie
