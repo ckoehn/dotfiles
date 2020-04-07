@@ -192,5 +192,5 @@ bindsym $mod+p exec --no-startup-id rofi-pass
 
 exec --no-startup-id ~/.config/i3/battery-monitor.sh
 exec --no-startup-id picom -O 0.5 -I 0.5 -b
-exec --no-startup-id feh --no-fehbg --bg-scale ~/.dotfiles/wallpaper/colorful_sunset_red_5120x2880.png
+exec_always --no-startup-id feh --no-fehbg --bg-scale ~/.dotfiles/wallpaper/colorful_sunset_red_5120x2880.png
 exec_always --no-startup-id ~/.config/polybar/launch.sh
