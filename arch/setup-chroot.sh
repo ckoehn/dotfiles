@@ -19,4 +19,4 @@ gpasswd -a ${USERNAME} docker
 # light
 gpasswd -a ${USERNAME} video
 
-systemctl enable NetworkManager lightdm systemd-timesyncd tlp docker
+systemctl enable NetworkManager lightdm systemd-timesyncd tlp docker paccache.timer
