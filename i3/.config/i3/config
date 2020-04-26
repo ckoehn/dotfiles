@@ -45,6 +45,7 @@ for_window [class="firefox"] border none
 for_window [class="Spotify"] border none floating enable
 for_window [class="Thunderbird"] border none
 for_window [class="Telegram"] border none
+for_window [class="Pavucontrol"] border none floating enable
 
 assign [class="Chromium"] $ws1
 assign [class="firefox"] $ws1
