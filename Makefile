@@ -1,7 +1,7 @@
 STOW_FLAGS = --verbose=1
 
 .PHONY: install
-install: dirs bin gpg zsh git vim kitty fonts i3 profile gtk
+install: dirs bin gpg zsh git vim kitty k9s fonts i3 profile gtk
 
 .PHONY: dirs
 dirs:
@@ -45,6 +45,10 @@ vim:
 .PHONY: kitty
 kitty:
 	stow kitty $(STOW_FLAGS)
+
+.PHONY: k9s
+k9s:
+	stow k9s $(STOW_FLAGS)
 
 .PHONY: fonts
 fonts:
