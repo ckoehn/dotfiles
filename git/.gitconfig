@@ -3,7 +3,6 @@
 
 [alias]
 	amend = commit --amend
-	latest = for-each-ref --sort=-committerdate --format='%(committerdate:short) %(refname:short)'
 	uncommit = reset --soft HEAD^
 	unstage = reset HEAD
 
