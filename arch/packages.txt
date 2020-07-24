@@ -21,6 +21,7 @@ python3
 
 acpi
 bat
+bind
 curl
 diff-so-fancy
 docker
