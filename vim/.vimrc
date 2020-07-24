@@ -288,7 +288,7 @@ let g:go_fmt_options = {
 let g:UltiSnipsExpandTrigger="<c-u>"
 
 " coc
-let g:coc_global_extensions = ["coc-python", "coc-json"]
+let g:coc_global_extensions = ["coc-python", "coc-json", "coc-yaml"]
 
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
