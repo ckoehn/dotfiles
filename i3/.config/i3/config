@@ -164,7 +164,7 @@ mode "$mode_system" {
 }
 bindsym $mod+Shift+e mode "$mode_system"
 
-set $mode_output [i] Intern  [e] Extern  [d] Dual
+set $mode_output [i] Internal  [e] External  [d] Dual
 mode "$mode_output" {
 	bindsym i exec --no-startup-id xrandr --output eDP-1 --primary --auto --output HDMI-1 --off, mode "default"
 	bindsym e exec --no-startup-id xrandr --output HDMI-1 --primary --auto --output eDP-1 --off, mode "default"
