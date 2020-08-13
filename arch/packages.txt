@@ -70,6 +70,7 @@ zsh
 
 noto-fonts
 ttf-dejavu
+ttf-roboto
 
 arandr
 arc-gtk-theme
