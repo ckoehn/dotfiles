@@ -176,6 +176,16 @@ mode "$mode_output" {
 }
 bindsym $mod+o mode "$mode_output"
 
+set $mode_keyboard [u] US  [d] DE
+mode "$mode_keyboard" {
+	bindsym u exec --no-startup-id bash ~/.xprofile && setxkbmap us, mode "default"
+	bindsym d exec --no-startup-id bash ~/.xprofile && setxkbmap de, mode "default"
+
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+}
+bindsym $mod+Shift+k mode "$mode_keyboard"
+
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
