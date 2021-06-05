@@ -187,7 +187,7 @@ nnoremap <silent> <leader>b :Buffers<CR>
 nnoremap <silent> <leader>f :Files<CR>
 nnoremap <silent> <leader>gh :BCommits<CR>
 let g:fzf_preview_window = ''
-let g:fzf_commits_log_options = '--format="%C(yellow)%h %ad%Cred%d %Creset%s%Cblue [%an]" --color=always --decorate --date=short'
+let g:fzf_commits_log_options = '--format="%C(yellow)%h %ad%Cred%d %Creset%s%Cblue [%aN]" --color=always --decorate --date=short'
 let g:fzf_buffers_jump = 1
 let g:fzf_layout = { 'down': '~20%' }
 " https://github.com/gruvbox-community/gruvbox/blob/ecba37e6b34410d27074247696a0c9fcc8558f7e/colors/gruvbox.vim#L897
