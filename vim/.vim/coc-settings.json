@@ -19,5 +19,10 @@
 	"python.linting.flake8Enabled": true,
 	"python.linting.flake8Path": "/usr/bin/flake8",
 	"python.linting.pylamaEnabled": false,
-	"python.linting.pylintEnabled": false
+	"python.linting.pylintEnabled": false,
+	"yaml.format.enable": true,
+	"yaml.format.proseWrap": "always",
+	"yaml.schemas": {
+    		"kubernetes": "templates/*.yaml"
+  	}
 }
