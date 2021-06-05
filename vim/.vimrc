@@ -309,7 +309,7 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gr <Plug>(coc-references)
 
 " python
-let g:python_breakpoint_cmd = "import pdb; pdb.set_trace()"
+let g:python_breakpoint_cmd = "breakpoint()"
 
 fun! PythonBreakpoint(lnum)
   let plnum = prevnonblank(a:lnum)
