@@ -19,6 +19,15 @@ k9s:
   info:
     fgColor: *yellow
     sectionColor: *foreground
+  dialog:
+    fgColor: *foreground
+    bgColor: *background
+    buttonFgColor: *foreground
+    buttonBgColor: *green
+    buttonFocusFgColor: *background
+    buttonFocusBgColor: *yellow
+    labelFgColor: *blue
+    fieldFgColor: *foreground
   frame:
     border:
       # XXX: Unused?
@@ -59,7 +68,7 @@ k9s:
     table:
       # XXX: Unused?
       # For some reason this is the border color in search mode
-      fgColor: *red
+      fgColor: *foreground
       bgColor: *background
       # XXX: Unused?
       cursorColor: *red
@@ -84,3 +93,8 @@ k9s:
       indicator:
         fgColor: *magenta
         bgColor: *background
+    help:
+      fgColor: *foreground
+      bgColor: *background
+      indicator:
+        fgColor: *red
