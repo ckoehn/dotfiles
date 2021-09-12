@@ -260,7 +260,7 @@ noremap <silent> <leader>dg :diffget<CR>
 noremap <silent> <leader>dp :diffput<CR>
 nnoremap <silent> <leader>gb :Gblame<CR>
 nnoremap <silent> <leader>gd :Gvdiff<CR>
-nnoremap <silent> <leader>gs :Gstatus<CR>
+nnoremap <silent> <leader>gs :Git<CR>
 
 " go
 augroup filetype_go
