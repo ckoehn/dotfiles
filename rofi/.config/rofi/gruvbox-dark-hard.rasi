@@ -56,6 +56,12 @@ element {
     padding: 2px 2px 2px 6px;
 }
 
+element-text {
+    background-color: inherit;
+    text-color:       inherit;
+
+}
+
 element.normal.normal {
     background-color: @normal-background;
     text-color:       @normal-foreground;
