@@ -17,15 +17,19 @@ fixed-center = false
 font-0 = Hack:size=10;3
 font-1 = FontAwesome:style=Regular:size=10;2
 foreground = ${colors.foreground}
-height = 27
+height = 40
 modules-left = i3
-modules-right = backlight volume cpu memory wlan0 wlan1 battery0 battery1 temperature date
+modules-right = backlight microphone volume cpu memory wlan0 wlan1 battery0 battery1 temperature date
 monitor = ${env:MONITOR:}
 module-margin = 2
 padding-right = 2
 separator = %{F#928374}|%{F-}
 tray-position = right
 width = 100%
+dpi-x = 144
+dpi-y = 144
+; dpi-x = 96
+; dpi-y = 96
 
 [module/i3]
 type = internal/i3
@@ -117,6 +121,14 @@ label-muted = " -"
 format-volume-prefix = 
 format-volume-prefix-foreground = ${colors.accent}
 label-volume = " %percentage%%"
+
+[module/microphone]
+type = custom/script
+exec = ~/.config/polybar/microphone.sh
+format-prefix = 
+format-prefix-foreground = ${colors.accent}
+label = " %output%"
+interval = 2
 
 [module/battery0]
 type = internal/battery

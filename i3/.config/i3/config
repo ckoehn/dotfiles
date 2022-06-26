@@ -63,6 +63,7 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec kitty
+bindsym $mod+g exec kitty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -164,11 +165,11 @@ mode "$mode_system" {
 }
 bindsym $mod+Shift+e mode "$mode_system"
 
-set $mode_output [i] Internal  [e] External  [d] Dual
+set $mode_output [i] Internal  [o] Office  [h] Home
 mode "$mode_output" {
-	bindsym i exec --no-startup-id xrandr --output eDP-1 --primary --auto --output HDMI-1 --off, mode "default"
-	bindsym e exec --no-startup-id xrandr --output HDMI-1 --primary --auto --output eDP-1 --off, mode "default"
-	bindsym d exec --no-startup-id xrandr --output eDP-1 --primary --auto --output HDMI-1 --right-of eDP-1 --auto, mode "default"
+	bindsym i exec --no-startup-id xrandr --output eDP-1 --primary --auto --output HDMI-1 --off --output DP-2 --off, mode "default"
+	bindsym o exec --no-startup-id xrandr --output HDMI-1 --primary --auto --output eDP-1 --off, mode "default"
+	bindsym h exec --no-startup-id xrandr --output DP-2 --primary --auto --output eDP-1 --off --output HDMI-1 --off, mode "default"
 
 	bindsym Return mode "default"
 	bindsym Escape mode "default"
@@ -201,6 +202,6 @@ bindsym $mod+m exec --no-startup-id pactl set-source-mute 1 toggle
 bindsym $mod+p exec --no-startup-id rofi-pass
 
 exec --no-startup-id ~/.config/i3/battery-monitor.sh
-exec --no-startup-id picom -c -b --config /dev/null
+exec --no-startup-id picom -c -b --config /dev/null --experimental-backends --vsync
 exec_always --no-startup-id feh --no-fehbg --bg-scale ~/.dotfiles/wallpaper/colorful_sunset_red_5120x2880.png
 exec_always --no-startup-id ~/.config/polybar/launch.sh
