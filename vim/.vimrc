@@ -4,12 +4,12 @@ Plug 'christoomey/vim-sort-motion'
 Plug 'christoomey/vim-system-copy'
 Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoInstallBinaries'}
 Plug 'itchyny/lightline.vim'
-Plug 'jiangmiao/auto-pairs'
+" Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf.vim'
 Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'scrooloose/nerdtree'
-Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+" Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
@@ -121,8 +121,8 @@ inoremap <expr> <C-k> pumvisible() ? "\<C-P>" : "\<C-k>"
 " Edit vim configuration
 nnoremap <leader>ev <C-w>s<C-w>j<C-w>L:e ~/.vimrc<cr>
 
-" close window
 map <leader>q :q<CR>
+map <leader>w :w<CR>
 
 " make < > keep selection
 vnoremap < <gv
@@ -146,7 +146,7 @@ map <leader>} ysiw}
 " Start/End of line
 noremap 0 ^
 noremap ^ 0
-noremap = $
+noremap ) $
 
 " reload
 nmap <silent> ,vr :so %<CR>
@@ -173,9 +173,8 @@ augroup filetypes
 	au!
 	au FileType yaml autocmd BufWritePre <buffer> %s/\s\+$//e
 	au FileType yaml,markdown,gitcommit setlocal spell
-	au FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
-	au FileType proto setlocal ts=2 sts=2 sw=2 expandtab
-	au FileType vim setlocal ts=2 sts=2 sw=2 expandtab
+	au FileType proto,sh,vim,yaml,zsh setlocal ts=2 sts=2 sw=2 expandtab
+	au FileType c,typescript setlocal ts=4 sts=4 sw=4 expandtab
 augroup end
 
 " ---------- PLUGINS ----------
@@ -258,7 +257,7 @@ endfunction
 " fugitive
 noremap <silent> <leader>dg :diffget<CR>
 noremap <silent> <leader>dp :diffput<CR>
-nnoremap <silent> <leader>gb :Gblame<CR>
+nnoremap <silent> <leader>gb :Git blame<CR>
 nnoremap <silent> <leader>gd :Gvdiff<CR>
 nnoremap <silent> <leader>gs :Git<CR>
 
