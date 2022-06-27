@@ -4,12 +4,11 @@ Plug 'christoomey/vim-sort-motion'
 Plug 'christoomey/vim-system-copy'
 Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoInstallBinaries'}
 Plug 'itchyny/lightline.vim'
-" Plug 'jiangmiao/auto-pairs'
+Plug '/opt/homebrew/opt/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'scrooloose/nerdtree'
-" Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
