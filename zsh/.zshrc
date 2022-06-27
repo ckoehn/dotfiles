@@ -1,5 +1,7 @@
+eval "$(/opt/homebrew/bin/brew shellenv)"
 source "${HOME}/.zconfig"
-source "${HOME}/.zplug/init.zsh"
+export ZPLUG_HOME=$(brew --prefix)/opt/zplug
+source $ZPLUG_HOME/init.zsh
 
 zstyle ':prezto:*:*' case-sensitive 'yes'
 zstyle ':prezto:*:*' color 'yes'
@@ -39,5 +41,5 @@ zplug load
 RPROMPT+=' $(kube_ps1)'
 
 # https://github.com/junegunn/fzf/blob/ab11b74be4b0c9fac88d95f0f563d0dc0cb06ed3/install#L259-L269
-[[ $- == *i* ]] && source "/usr/share/fzf/completion.zsh" 2> /dev/null
-source "/usr/share/fzf/key-bindings.zsh"
+[[ $- == *i* ]] && source "$(brew --prefix)/opt/fzf/shell/completion.zsh" 2> /dev/null
+source "$(brew --prefix)/opt/fzf/shell/key-bindings.zsh"

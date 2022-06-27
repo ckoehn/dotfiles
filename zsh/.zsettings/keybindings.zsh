@@ -1,5 +1,3 @@
-bindkey jj vi-cmd-mode
-
 # Enable select-quoted
 autoload -U select-quoted
 zle -N select-quoted
