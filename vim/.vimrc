@@ -84,6 +84,9 @@ silent! colorscheme gruvbox
 highlight ColorColumn ctermbg=236 guibg=#3c3836
 let &colorcolumn=100
 
+" https://apple.stackexchange.com/questions/173275/delete-key-doesnt-work-in-vim-on-iterm2
+set backspace=indent,eol,start
+
 " -------- KEY MAPPING --------
 " -----------------------------
 " Leader
