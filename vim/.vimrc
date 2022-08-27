@@ -117,8 +117,8 @@ nnoremap ss <C-w>s<C-w>j
 nnoremap <leader>0 <C-w>=
 
 " popupmenu keys
-inoremap <expr> <C-j> pumvisible() ? "\<C-N>" : "\<C-j>"
-inoremap <expr> <C-k> pumvisible() ? "\<C-P>" : "\<C-k>"
+inoremap <expr> <C-j> pumvisible() ? "\<C-N>" : coc#pum#visible() ? coc#pum#next(1) : "\<C-j>"
+inoremap <expr> <C-k> pumvisible() ? "\<C-P>" : coc#pum#visible() ? coc#pum#prev(1) : "\<C-k>"
 
 " Edit vim configuration
 nnoremap <leader>ev <C-w>s<C-w>j<C-w>L:e ~/.vimrc<cr>
@@ -290,19 +290,6 @@ let g:UltiSnipsExpandTrigger="<c-u>"
 
 " coc
 let g:coc_global_extensions = ["coc-python", "coc-json", "coc-yaml"]
-
-" Use tab for trigger completion with characters ahead and navigate.
-" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
 
 nmap <leader>rn <Plug>(coc-rename)
 nmap <leader>ge :CocList diagnostics<CR>
