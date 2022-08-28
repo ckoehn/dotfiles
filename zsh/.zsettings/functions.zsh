@@ -50,3 +50,8 @@ kcni () {
 	local current=$(kubectl config current-context)
 	kubectl config set-context "${current}" --namespace="${ns}"
 }
+
+kcci () {
+	local context=$(kubectl config get-contexts --output='name' | fzf)
+	kubectl config use-context "${context}"
+}
