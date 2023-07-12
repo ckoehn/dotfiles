@@ -6,7 +6,7 @@ Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoInstallBinaries'}
 Plug 'itchyny/lightline.vim'
 Plug '/opt/homebrew/opt/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'morhetz/gruvbox'
+Plug 'gruvbox-community/gruvbox'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-commentary'
@@ -77,6 +77,7 @@ endif
 let &t_ut=''
 
 set background=dark
+let g:gruvbox_guisp_fallback = "bg"
 let g:gruvbox_contrast_dark='hard'
 silent! colorscheme gruvbox
 
@@ -130,13 +131,8 @@ map <leader>w :w<CR>
 vnoremap < <gv
 vnoremap > >gv
 
-set pastetoggle=<F2>
-
 " switch between current and last buffer
 nnoremap <leader><leader> <c-^>
-
-" map esc in insert mode
-inoremap jj <Esc>
 
 " surround
 map <leader>" ysiw"
@@ -174,7 +170,7 @@ endfunction
 augroup filetypes
 	au!
 	au FileType yaml autocmd BufWritePre <buffer> %s/\s\+$//e
-	au FileType yaml,markdown,gitcommit setlocal spell
+	au FileType markdown,gitcommit setlocal spell
 	au FileType proto,sh,vim,yaml,zsh setlocal ts=2 sts=2 sw=2 expandtab
 	au FileType c,typescript setlocal ts=4 sts=4 sw=4 expandtab
 augroup end
@@ -191,21 +187,6 @@ let g:fzf_preview_window = ''
 let g:fzf_commits_log_options = '--format="%C(yellow)%h %ad%Cred%d %Creset%s%Cblue [%aN]" --color=always --decorate --date=short'
 let g:fzf_buffers_jump = 1
 let g:fzf_layout = { 'down': '~20%' }
-" https://github.com/gruvbox-community/gruvbox/blob/ecba37e6b34410d27074247696a0c9fcc8558f7e/colors/gruvbox.vim#L897
-let g:fzf_colors = {
-\ 'fg':      ['fg', 'GruvboxFg1'],
-\ 'bg':      ['fg', 'GruvboxBg0'],
-\ 'hl':      ['fg', 'GruvboxYellow'],
-\ 'fg+':     ['fg', 'GruvboxFg1'],
-\ 'bg+':     ['fg', 'GruvboxBg1'],
-\ 'hl+':     ['fg', 'GruvboxYellow'],
-\ 'info':    ['fg', 'GruvboxBlue'],
-\ 'prompt':  ['fg', 'GruvboxFg4'],
-\ 'pointer': ['fg', 'GruvboxBlue'],
-\ 'marker':  ['fg', 'GruvboxOrange'],
-\ 'spinner': ['fg', 'GruvboxYellow'],
-\ 'header':  ['fg', 'GruvboxBg3']
-\ }
 
 " nerdtree
 map <silent> <C-n> :NERDTreeToggle<CR>
@@ -285,11 +266,8 @@ let g:go_fmt_options = {
 \ 'goimports': '-local gitlab.figo.systems',
 \ }
 
-" ultisnips
-let g:UltiSnipsExpandTrigger="<c-u>"
-
 " coc
-let g:coc_global_extensions = ["coc-python", "coc-json", "coc-yaml"]
+let g:coc_global_extensions = ["coc-pyright", "coc-json", "coc-yaml"]
 
 nmap <leader>rn <Plug>(coc-rename)
 nmap <leader>ge :CocList diagnostics<CR>
