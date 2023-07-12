@@ -43,3 +43,10 @@ RPROMPT+=' $(kube_ps1)'
 # https://github.com/junegunn/fzf/blob/ab11b74be4b0c9fac88d95f0f563d0dc0cb06ed3/install#L259-L269
 [[ $- == *i* ]] && source "$(brew --prefix)/opt/fzf/shell/completion.zsh" 2> /dev/null
 source "$(brew --prefix)/opt/fzf/shell/key-bindings.zsh"
+
+# https://github.com/helm/helm/issues/9251
+# helm couldn't install our chart anymore
+ulimit -n 1024
+
+# brew: coreutils
+PATH="$(brew --prefix)/opt/coreutils/libexec/gnubin:$PATH"
