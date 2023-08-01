@@ -4,7 +4,7 @@ Plug 'christoomey/vim-sort-motion'
 Plug 'christoomey/vim-system-copy'
 Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoInstallBinaries'}
 Plug 'itchyny/lightline.vim'
-Plug '/opt/homebrew/opt/fzf'
+Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -182,8 +182,8 @@ augroup end
 " ---------- PLUGINS ----------
 " -----------------------------
 " fzf
-nnoremap <silent> <leader>ag :Ag<CR>
-nnoremap <silent> <Leader>aw :Ag <C-R><C-W><CR>
+nnoremap <silent> <leader>ag :Rg<CR>
+nnoremap <silent> <Leader>aw :Rg <C-R><C-W><CR>
 nnoremap <silent> <leader>b :Buffers<CR>
 nnoremap <silent> <leader>f :Files<CR>
 nnoremap <silent> <leader>gh :BCommits<CR>

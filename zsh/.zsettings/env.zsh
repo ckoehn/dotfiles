@@ -1,16 +1,11 @@
-# vim: ft=zsh
-export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+export FZF_DEFAULT_COMMAND='fd --type file --hidden --exclude .git'
+export FZF_CTRL_T_COMMAND="${FZF_DEFAULT_COMMAND}"
 export FZF_DEFAULT_OPTS='--reverse --height 40% --inline-info --preview-window="right:hidden" --preview "[[ $(file --mime {}) =~ binary ]] && hexyl {} || bat -n --color always {}" --bind="?:toggle-preview"'
 
 export BAT_THEME='gruvbox-dark'
 
-export NVM_DIR="${HOME}/.nvm"
-export NVM_LAZY_LOAD=true
-
-export KUBE_PS1_ENABLED="off"
-export KUBE_PS1_SYMBOL_ENABLE=false
-
 export GOPATH="${HOME}/code/go"
 export PATH="${PATH}:${GOPATH}/bin"
 
-export VIRTUALENVWRAPPER_PYTHON='/usr/bin/python3'
+export HOMEBREW_PREFIX='/opt/homebrew'
+export PATH="${HOMEBREW_PREFIX}/opt/gnu-sed/libexec/gnubin:${HOMEBREW_PREFIX}/opt/coreutils/libexec/gnubin:${PATH}"

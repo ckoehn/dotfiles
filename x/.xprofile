@@ -1,4 +1,0 @@
-#!/bin/sh
-xrdb -load ~/.Xresources
-setxkbmap us -option 'ctrl:nocaps'
-xset r rate 200 40
