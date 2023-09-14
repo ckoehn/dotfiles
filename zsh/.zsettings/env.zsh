@@ -4,8 +4,9 @@ export FZF_DEFAULT_OPTS='--reverse --height 40% --inline-info --preview-window="
 
 export BAT_THEME='gruvbox-dark'
 
-export GOPATH="${HOME}/code/go"
-export PATH="${PATH}:${GOPATH}/bin"
-
 export HOMEBREW_PREFIX='/opt/homebrew'
 export PATH="${HOMEBREW_PREFIX}/opt/gnu-sed/libexec/gnubin:${HOMEBREW_PREFIX}/opt/coreutils/libexec/gnubin:${PATH}"
+
+export GOPATH="${HOME}/code/go"
+export PATH="${GOPATH}/bin:${PATH}"
+export PATH="${HOME}/.local/bin:${PATH}"

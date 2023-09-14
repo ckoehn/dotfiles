@@ -1,0 +1,42 @@
+theme = "gruvbox_dark_hard"
+
+[editor]
+mouse = false
+rulers = [100]
+cursorline = true
+text-width = 100
+
+[editor.statusline]
+right = [
+  "diagnostics",
+  "file-line-ending",
+  "file-encoding",
+  "file-type",
+  "position-percentage",
+  "position",
+]
+
+[editor.file-picker]
+hidden = false
+
+[editor.indent-guides]
+render = true
+
+[editor.whitespace.render]
+space = "all"
+tab = "all"
+
+[keys.normal]
+C-j = "jump_view_down"
+C-k = "jump_view_up"
+C-l = "jump_view_right"
+C-h = "jump_view_left"
+
+[keys.normal.","]
+w = ":write"
+q = ":quit"
+v = "vsplit"
+h = "hsplit"
+"," = "keep_primary_selection"
+s.n = "split_selection_on_newline"
+s.o = ":sort"

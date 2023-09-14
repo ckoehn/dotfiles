@@ -30,3 +30,11 @@ zsh: zprezto
 gpg:
 	mkdir -v -p -m 700 ~/.gnupg
 	stow gnupg $(STOW_FLAGS)
+
+.PHONY: helix
+helix:
+	stow helix $(STOW_FLAGS)
+	# language servers
+	# https://github.com/helix-editor/helix/wiki/How-to-install-the-default-language-servers
+	go install golang.org/x/tools/gopls@latest
+	pipx install python-lsp-server[all]

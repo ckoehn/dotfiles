@@ -1,0 +1,3 @@
+[[language]]
+name = "yaml"
+file-types = ["yml", "yaml", "argo-yaml"]
