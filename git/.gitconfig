@@ -25,6 +25,7 @@
 
 [core]
 	excludesfile = ~/.gitignore.local
+	editor = hx
 	pager = delta
 
 [diff]
