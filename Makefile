@@ -36,5 +36,5 @@ helix:
 	stow helix $(STOW_FLAGS)
 	# language servers
 	# https://github.com/helix-editor/helix/wiki/How-to-install-the-default-language-servers
-	go install golang.org/x/tools/gopls@latest
+	# gopls installed via brew
 	pipx install python-lsp-server[all]
