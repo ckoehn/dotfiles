@@ -13,3 +13,5 @@ fi
 
 source "${HOMEBREW_PREFIX}/opt/fzf/shell/key-bindings.zsh"
 source "${HOMEBREW_PREFIX}/opt/fzf/shell/completion.zsh"
+
+eval "$(starship init zsh)"

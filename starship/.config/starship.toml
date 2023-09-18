@@ -1,0 +1,38 @@
+add_newline = false
+
+format = """
+$directory\
+$character"""
+
+right_format = """
+$git_branch\
+$git_commit\
+$git_state\
+$python\
+$kubernetes"""
+
+[directory]
+style = "blue"
+fish_style_pwd_dir_length = 1
+truncation_length = 1
+
+[character]
+success_symbol = "[❯](red)[❯](yellow)[❯](green)"
+error_symbol = "[❯❯❯](red)"
+vimcmd_symbol = "[❮](green)[❮](yellow)[❮](red)"
+
+[git_branch]
+format = "[$branch]($style) "
+style = "bold purple"
+
+[git_state]
+format = '\([$state($progress_current/$progress_total)]($style)\) '
+style = "bold purple"
+
+[git_commit]
+format = '[\($hash$tag\)]($style) '
+style = "bold purple"
+
+[python]
+format = "[$virtualenv]($style) "
+style = "bold yellow"

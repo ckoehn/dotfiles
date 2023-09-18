@@ -22,8 +22,12 @@ k9s:
 zplug:
 	-[ ! -d ~/.zprezto ] && git clone --recursive https://github.com/sorin-ionescu/prezto.git ~/.zprezto
 
+.PHONY: starship
+starship:
+	stow starship $(STOW_FLAGS)
+
 .PHONY: zsh
-zsh: zprezto
+zsh: zprezto starship
 	stow zsh $(STOW_FLAGS)
 
 .PHONY: gpg
