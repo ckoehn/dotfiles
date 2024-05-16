@@ -44,4 +44,4 @@ alias k9s='TERM=xterm-256color k9s'
 alias ko='kubeon'
 
 alias sync-drives='rsync -ah --progress --stats --delete --exclude /.TemporaryItems --exclude /.Spotlight-V100 --exclude /.fseventsd --exclude /.Trashes /Volumes/data/ /Volumes/mirror/'
-alias buu='brew update && brew upgrade'
+alias buu='brew update && brew upgrade && brew autoremove'
