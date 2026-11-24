@@ -45,6 +45,12 @@
 [interactive]
 	diffFilter = delta --color-only
 
+[gpg]
+	format = ssh
+
+[gpg "ssh"]
+	allowedSignersFile = ~/.git_allowed_signers
+
 [help]
 	autocorrect = prompt
 
@@ -83,6 +89,7 @@
 	autoUpdate = true
 
 [tag]
+	gpgSign = true
 	sort = version:refname
 
 [include]
