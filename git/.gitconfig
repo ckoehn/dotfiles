@@ -1,13 +1,14 @@
 [user]
 	name = Christian Köhn
+	useConfigOnly = true
 
 [alias]
 	amend = commit --amend
 	uncommit = reset --soft HEAD^
-	unstage = reset HEAD
+	unstage = restore --staged
 
-[color]
-	ui = true
+[branch]
+	sort = -committerdate
 
 [color "branch"]
 	current = yellow reverse
@@ -20,22 +21,43 @@
 	old = red
 	new = green
 
+[column]
+	ui = auto
+
 [commit]
 	gpgsign = true
+	verbose = true
 
 [core]
 	excludesfile = ~/.gitignore.local
 	pager = delta
 
 [diff]
-	algorithm = patience
-	colorMoved = default
+	algorithm = histogram
+	colorMoved = zebra
+	colorMovedWS = allow-indentation-change
 
 [delta]
 	side-by-side = true
+	navigate = true
+
+[interactive]
+	diffFilter = delta --color-only
+
+[gpg]
+	format = ssh
+
+[gpg "ssh"]
+	allowedSignersFile = ~/.git_allowed_signers
+
+[help]
+	autocorrect = prompt
+
+[init]
+	defaultBranch = main
 
 [merge]
-	conflictstyle = diff3
+	conflictstyle = zdiff3
 	ff = false
 	summary = true
 	tool = vimdiff
@@ -47,16 +69,27 @@
 
 [fetch]
 	prune = true
+	pruneTags = true
 
 [pull]
 	rebase = true
 
 [push]
-	default = simple
+	autoSetupRemote = true
 	followTags = true
+
+[rebase]
+	autoStash = true
+	autoSquash = true
+	updateRefs = true
 
 [rerere]
 	enabled = true
+	autoUpdate = true
+
+[tag]
+	gpgSign = true
+	sort = version:refname
 
 [include]
 	path = ~/.gitconfig.local

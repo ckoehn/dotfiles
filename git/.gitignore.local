@@ -68,3 +68,4 @@ tags
 .python-version
 .idea
 .vscode
+.venv
